@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thunder - Version 3 (HTML + CSS + JavaScript)</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ============================================= -->
+  <!-- VERSION 3: HTML + CSS + JAVASCRIPT             -->
+  <!-- Same content. Now EVERYTHING comes alive.      -->
+  <!-- ids/data hooks added so JS can find elements.  -->
+  <!-- ============================================= -->
+
+  <header class="hero">
+    <!-- NEW in v3: a theme toggle. JavaScript will flip the whole site's mood. -->
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">🌙</button>
+    <h1>Welcome to Thunder</h1>
+    <p class="subtitle">Now with JavaScript. Click anything — it finally works.</p>
+  </header>
+
+  <main class="container">
+
+    <section class="card">
+      <img src="https://picsum.photos/id/1018/600/300" alt="A scenic mountain landscape" class="banner">
+    </section>
+
+    <!-- The button now talks back -->
+    <section class="card">
+      <h2>A Button</h2>
+      <button class="btn" id="clickBtn">Click Me</button>
+      <p class="muted" id="clickStatus">Status: waiting for your click...</p>
+    </section>
+
+    <!-- The calculator actually computes -->
+    <section class="card">
+      <h2>Mini Calculator</h2>
+      <div class="calc-row">
+        <input type="number" placeholder="First number" class="field" id="num1">
+        <span class="plus">+</span>
+        <input type="number" placeholder="Second number" class="field" id="num2">
+        <button class="btn" id="sumBtn">Sum</button>
+      </div>
+      <p class="result" id="calcResult">Result: enter two numbers and press Sum</p>
+    </section>
+
+    <!-- GitHub profiles fetched live from the internet -->
+    <section class="card">
+      <h2>GitHub Profiles</h2>
+      <button class="btn" id="githubBtn">Load 10 GitHub Profiles</button>
+      <p class="muted" id="githubStatus">Real data, fetched live from GitHub's servers.</p>
+      <div class="profile-grid" id="profileGrid">
+        <!-- JavaScript will fill this with 10 real user cards. -->
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p><em>Lesson: the buttons existed since version 1. CSS made them gorgeous. But not one of them worked until JavaScript showed up.</em></p>
+  </footer>
+
+  <!-- The brain. Loaded at the end so all elements exist before JS runs. -->
+  <script src="script.js"></script>
+</body>
+</html>

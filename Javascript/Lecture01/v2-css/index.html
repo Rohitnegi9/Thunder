@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thunder - Version 2 (HTML + CSS)</title>
+  <!-- The ONLY new line vs v1: we attach a stylesheet. Same content, new skin. -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ============================================= -->
+  <!-- VERSION 2: HTML + CSS                          -->
+  <!-- Same content as v1. Now it's BEAUTIFUL...      -->
+  <!-- ...but still completely DEAD. The trap stage.  -->
+  <!-- ============================================= -->
+
+  <header class="hero">
+    <h1>Welcome to Thunder</h1>
+    <p class="subtitle">Now with CSS. It looks gorgeous. But watch closely — nothing actually works yet.</p>
+  </header>
+
+  <main class="container">
+
+    <!-- The image, now framed nicely -->
+    <section class="card">
+      <img src="https://picsum.photos/id/1018/600/300" alt="A scenic mountain landscape" class="banner">
+    </section>
+
+    <!-- The button. Hover over it — CSS makes it react a little! Great teaching moment. -->
+    <section class="card">
+      <h2>A Button</h2>
+      <button class="btn">Click Me</button>
+      <p class="muted">Hover works (that's CSS). Clicking still does nothing.</p>
+    </section>
+
+    <!-- The calculator, now styled. Still cannot compute. -->
+    <section class="card">
+      <h2>Mini Calculator</h2>
+      <div class="calc-row">
+        <input type="number" placeholder="First number" class="field">
+        <span class="plus">+</span>
+        <input type="number" placeholder="Second number" class="field">
+        <button class="btn">Sum</button>
+      </div>
+      <p class="result">Result: ???</p>
+    </section>
+
+    <!-- GitHub section, styled. Button still dead. -->
+    <section class="card">
+      <h2>GitHub Profiles</h2>
+      <button class="btn">Load 10 GitHub Profiles</button>
+      <p class="muted">Looks like a real app now. Click it... still nothing.</p>
+      <div class="profile-grid">
+        <!-- Profiles would appear here... but CSS can't fetch them. -->
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p><em>Lesson: pretty does not mean functional. CSS dressed everything up, but it's all an illusion. Not one button works.</em></p>
+  </footer>
+
+</body>
+</html>
