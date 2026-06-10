@@ -9,3 +9,6 @@ Lecture04: https://app.notion.com/p/Lecture04-Loop-Number-math-and-String-37643a
 Lecture05: https://app.notion.com/p/Lecture05-37743ac5cab980fc90afeec0d60a0fda?source=copy_link
 
 Lecture06: https://app.notion.com/p/Lecture06-Array-and-Objects-in-Javascript-37943ac5cab9807f801cc8c83755decc?source=copy_link
+
+Lecture07: https://app.notion.com/p/Lecture-07-Objects-and-Date-37b43ac5cab980cfa8d3db0bf87411b2?source=copy_link
+
