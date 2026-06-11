@@ -12,3 +12,5 @@ Lecture06: https://app.notion.com/p/Lecture06-Array-and-Objects-in-Javascript-37
 
 Lecture07: https://app.notion.com/p/Lecture-07-Objects-and-Date-37b43ac5cab980cfa8d3db0bf87411b2?source=copy_link
 
+Lecture08: https://app.notion.com/p/Lecture08-Date-and-Functions-in-JS-37c43ac5cab98043bcfafdc2a70c7a3a?source=copy_link
+
