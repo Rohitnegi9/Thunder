@@ -14,3 +14,4 @@ Lecture07: https://app.notion.com/p/Lecture-07-Objects-and-Date-37b43ac5cab980cf
 
 Lecture08: https://app.notion.com/p/Lecture08-Date-and-Functions-in-JS-37c43ac5cab98043bcfafdc2a70c7a3a?source=copy_link
 
+Lecture09: https://app.notion.com/p/Lecture09-Callback-forEach-map-filter-reduce-37d43ac5cab980e0a44ef39a89b81143?source=copy_link
