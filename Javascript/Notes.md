@@ -17,3 +17,5 @@ Lecture08: https://app.notion.com/p/Lecture08-Date-and-Functions-in-JS-37c43ac5c
 Lecture09: https://app.notion.com/p/Lecture09-Callback-forEach-map-filter-reduce-37d43ac5cab980e0a44ef39a89b81143?source=copy_link
 
 Lecture10: https://app.notion.com/p/Lecture10-Introduction-To-DOM-38043ac5cab980adbbdeffd5e8dc6ae8?source=copy_link
+
+Lecture11: https://app.notion.com/p/Lecture11-CRUD-and-Event-in-DOM-38143ac5cab980d48176fda6b086cfef?source=copy_link
