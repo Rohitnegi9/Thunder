@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: black; font-size: 100px; height: 100vh; display: flex; justify-content: center; align-items: center; color: wheat;">
+    <h1>10:12:06</h1>
+
+    <script>
+        
+        const h1 = document.querySelector('h1');
+       
+        // setInterval(callback,timer(millisecond))
+        // setTimeout: one time
+       setInterval(() => {
+            let time = new Date();
+            h1.textContent = time.toLocaleString();
+       }, 1000);
+    </script>
+</body>
+
+
+</html>

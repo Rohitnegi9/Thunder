@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: black; color: white; font-size: 50px;">
+    <h1>Olympic 2028 Countdown Timer</h1>
+    <h2></h2>
+
+    <script>
+         
+        //  current date ka timestamp
+        let olympicTimestamp = new Date(2028,6,14).getTime();
+
+        setInterval(()=>{
+        let currenrtTimestamp = Date.now();
+
+        let remainigTime = olympicTimestamp-currenrtTimestamp;
+
+        const days = Math.floor((remainigTime)/(1000*60*60*24));
+        remainigTime%=1000*60*60*24;
+
+        const hours = Math.floor((remainigTime)/(1000*60*60));
+        remainigTime%=1000*60*60;
+
+        const minutes = Math.floor((remainigTime)/(1000*60));
+        remainigTime%=1000*60;
+
+        const second = Math.floor((remainigTime)/(1000));
+        remainigTime%=1000;
+        
+        const h2 = document.querySelector('h2');
+        
+        h2.textContent = `${days}:Days  ${hours}:Hours    ${minutes}:Minutes    ${second}:Seconds`;
+        },1000)
+    </script>
+</body>
+</html>
