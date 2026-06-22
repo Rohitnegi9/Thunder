@@ -21,3 +21,5 @@ Lecture10: https://app.notion.com/p/Lecture10-Introduction-To-DOM-38043ac5cab980
 Lecture11: https://app.notion.com/p/Lecture11-CRUD-and-Event-in-DOM-38143ac5cab980d48176fda6b086cfef?source=copy_link
 
 Lecture12: https://app.notion.com/p/Lecture12-Even-and-Project-in-Javascript-38343ac5cab980aab918f7f4dc5c2fff?source=copy_link
+
+Lecture14: https://app.notion.com/p/Lecture14-Project-in-Javascript-38443ac5cab9809ba1e9fbcf3c776723?source=copy_link

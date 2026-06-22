@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weather App</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #0f172a;
+      color: white;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      background-color: #1e293b;
+      padding: 30px;
+      border-radius: 16px;
+      width: 360px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    }
+
+    h1 {
+      margin-bottom: 20px;
+      color: #38bdf8;
+    }
+
+    input {
+      width: 90%;
+      padding: 12px;
+      border: none;
+      outline: none;
+      border-radius: 8px;
+      font-size: 16px;
+      margin-bottom: 15px;
+    }
+
+    button {
+      padding: 12px 20px;
+      border: none;
+      border-radius: 8px;
+      background-color: #38bdf8;
+      color: #0f172a;
+      font-size: 16px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    button:hover {
+      background-color: #0ea5e9;
+    }
+
+    .weather-box {
+      margin-top: 25px;
+      min-height: 150px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .city-name {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .temperature {
+      font-size: 46px;
+      font-weight: bold;
+      margin: 8px 0;
+    }
+
+    .condition {
+      font-size: 18px;
+      color: #cbd5e1;
+    }
+
+    .error {
+      color: #f87171;
+      font-size: 18px;
+    }
+
+    .loading {
+      color: #38bdf8;
+      font-size: 18px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <h1>Weather App</h1>
+
+    <input type="text" id="cityInput" placeholder="Enter city name" />
+
+    <br />
+
+    <button id="weatherButton">Get Weather</button>
+
+    <div class="weather-box" id="weatherBox">
+      <p class="condition">Search any city to see weather</p>
+    </div>
+  </div>
+
+   <script src="./first.js"></script>
+
+</body>
+</html>
