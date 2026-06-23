@@ -23,3 +23,5 @@ Lecture11: https://app.notion.com/p/Lecture11-CRUD-and-Event-in-DOM-38143ac5cab9
 Lecture12: https://app.notion.com/p/Lecture12-Even-and-Project-in-Javascript-38343ac5cab980aab918f7f4dc5c2fff?source=copy_link
 
 Lecture14: https://app.notion.com/p/Lecture14-Project-in-Javascript-38443ac5cab9809ba1e9fbcf3c776723?source=copy_link
+
+Lecture15: https://app.notion.com/p/Lecture15-JSON-vs-JS-Object-38843ac5cab9801e9c30f80559f919a0?source=copy_link

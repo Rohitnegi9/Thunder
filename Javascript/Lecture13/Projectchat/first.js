@@ -24,7 +24,7 @@ async function sendMessage() {
     sendButton.disabled = true;
 
     const loadingBubble = addMessage("AI is thinking...", "ai loading");
-
+    // https://text.pollinations.ai/hi%20how%20are%20you
     const url = "https://text.pollinations.ai/" + encodeURIComponent(message);
 
     const response = await fetch(url);
