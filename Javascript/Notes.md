@@ -29,3 +29,5 @@ Lecture15: https://app.notion.com/p/Lecture15-JSON-vs-JS-Object-38843ac5cab9801e
 Lecture16: https://app.notion.com/p/Lecture16-Memory-management-and-How-JS-code-works-38b43ac5cab980af918bf13d86ec5d6c?source=copy_link
 
 Lecture17: https://app.notion.com/p/Lecture-17-Prototype-classes-and-Eventloop-in-JS-38c43ac5cab9805f9b60eaf160aa057e?source=copy_link
+
+Lecture18: https://app.notion.com/p/Lecture18-Callback-Hell-and-Promises-38e43ac5cab980358e38c75eae99dc6b?source=copy_link
