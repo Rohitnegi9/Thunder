@@ -31,3 +31,5 @@ Lecture16: https://app.notion.com/p/Lecture16-Memory-management-and-How-JS-code-
 Lecture17: https://app.notion.com/p/Lecture-17-Prototype-classes-and-Eventloop-in-JS-38c43ac5cab9805f9b60eaf160aa057e?source=copy_link
 
 Lecture18: https://app.notion.com/p/Lecture18-Callback-Hell-and-Promises-38e43ac5cab980358e38c75eae99dc6b?source=copy_link
+
+https://app.notion.com/p/Lecture-19-Closure-and-This-Keyword-38f43ac5cab9806e98f2f95649ffb759?source=copy_link
