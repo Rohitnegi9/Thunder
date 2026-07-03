@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TaskVault — Step 3: shared cloud database</title>
+<style>
+  :root {
+    --ink: #14231b;
+    --paper: #f3efe3;
+    --panel: #fbf9f2;
+    --line: #c9c0a8;
+    --moss: #3f6b4f;
+    --moss-deep: #2c4d38;
+    --clay: #b5502f;
+    --amber: #c68a2e;
+    --sky: #2f6f8f;
+    --muted: #6f6a58;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Iowan Old Style', 'Palatino Linotype', Georgia, serif;
+    background: var(--paper);
+    color: var(--ink);
+    line-height: 1.5;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 24px 16px 60px;
+  }
+  .wrap { width: 100%; max-width: 560px; }
+
+  header.brand {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    border-bottom: 2px solid var(--ink);
+    padding-bottom: 10px;
+    margin-bottom: 4px;
+  }
+  .logo { font-size: 1.5rem; font-weight: 700; letter-spacing: -0.02em; }
+  .logo b { color: var(--moss); }
+  .tagline {
+    font-family: ui-monospace, 'SF Mono', Menlo, monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .step-tag {
+    display: inline-block;
+    font-family: ui-monospace, monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    background: var(--sky);
+    color: #fff;
+    padding: 2px 8px;
+    border-radius: 2px;
+    margin-top: 10px;
+  }
+
+  .mode {
+    display: flex; align-items: center; gap: 8px;
+    font-family: ui-monospace, monospace;
+    font-size: 0.72rem;
+    padding: 8px 12px;
+    border-radius: 2px;
+    margin: 14px 0 4px;
+    border: 1px solid var(--line);
+  }
+  .mode .dot { width: 10px; height: 10px; border-radius: 50%; flex: none; }
+  .mode.cloud { background: #e7f0f4; border-color: var(--sky); color: #1d4a5f; }
+  .mode.cloud .dot { background: var(--sky); }
+  .mode.local { background: #f6efdb; border-color: var(--amber); color: #5a4a1f; }
+  .mode.local .dot { background: var(--amber); }
+
+  .lesson {
+    background: repeating-linear-gradient(45deg, #e7f0f4, #e7f0f4 12px, #dbe9ef 12px, #dbe9ef 24px);
+    border: 1px solid var(--sky);
+    border-left: 4px solid var(--sky);
+    padding: 12px 14px;
+    margin: 10px 0 16px;
+    font-size: 0.86rem;
+    color: #1d4a5f;
+  }
+  .lesson b { color: var(--clay); }
+
+  .card {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 2px;
+    padding: 20px;
+    margin-bottom: 18px;
+    box-shadow: 3px 3px 0 rgba(44,77,56,0.08);
+  }
+  .card h2 {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--muted);
+    font-family: ui-monospace, monospace;
+    margin-bottom: 12px;
+    font-weight: 600;
+  }
+
+  label { display: block; font-size: 0.8rem; margin-bottom: 4px; color: var(--muted); }
+  input[type=text], input[type=password] {
+    width: 100%;
+    padding: 9px 11px;
+    border: 1px solid var(--line);
+    background: #fff;
+    border-radius: 2px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    margin-bottom: 12px;
+  }
+  input:focus { outline: 2px solid var(--sky); outline-offset: 1px; }
+
+  button {
+    font-family: inherit;
+    cursor: pointer;
+    border: none;
+    border-radius: 2px;
+    font-size: 0.9rem;
+    padding: 9px 16px;
+    background: var(--moss);
+    color: #fff;
+    transition: background 0.15s;
+  }
+  button:hover { background: var(--moss-deep); }
+  button:disabled { opacity: 0.5; cursor: wait; }
+  button.ghost { background: transparent; color: var(--moss-deep); border: 1px solid var(--line); }
+  button.ghost:hover { background: #eee7d3; }
+  button.danger { background: var(--clay); }
+  button.danger:hover { background: #8f3d22; }
+
+  .row { display: flex; gap: 8px; align-items: center; }
+  .row input { margin-bottom: 0; }
+
+  .who {
+    display: flex; align-items: center; justify-content: space-between;
+    font-size: 0.85rem; margin-bottom: 4px;
+  }
+  .who span b { color: var(--moss-deep); }
+
+  ul#list { list-style: none; }
+  #list li {
+    display: flex; align-items: center; gap: 10px;
+    padding: 10px 4px;
+    border-bottom: 1px dashed var(--line);
+  }
+  #list li:last-child { border-bottom: none; }
+  #list li.done .txt { text-decoration: line-through; color: var(--muted); }
+  #list .txt { flex: 1; font-size: 0.98rem; }
+  #list input[type=checkbox] { width: 18px; height: 18px; accent-color: var(--moss); }
+  #list button { padding: 3px 9px; font-size: 0.78rem; background: none; color: var(--clay); }
+  #list button:hover { text-decoration: underline; }
+
+  .empty { color: var(--muted); font-style: italic; padding: 12px 4px; font-size: 0.9rem; }
+  .hidden { display: none !important; }
+
+  .prove { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 12px; }
+  .status { font-size: 0.78rem; color: var(--muted); margin-top: 10px; min-height: 1.2em; }
+  .status.err { color: var(--clay); }
+
+  footer {
+    margin-top: 8px;
+    font-size: 0.78rem;
+    color: var(--muted);
+    text-align: center;
+    max-width: 560px;
+  }
+  footer code {
+    font-family: ui-monospace, monospace;
+    background: #e8e1cd;
+    padding: 1px 5px;
+    border-radius: 2px;
+  }
+  .setup {
+    background: #14231b; color: #cfe3d6;
+    font-family: ui-monospace, monospace; font-size: 0.72rem;
+    padding: 14px; border-radius: 2px; margin-bottom: 18px;
+    white-space: pre-wrap; line-height: 1.6;
+  }
+  .setup b { color: var(--amber); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="brand">
+    <div class="logo">Task<b>Vault</b></div>
+    <div class="tagline">supabase · shared cloud</div>
+  </header>
+  <span class="step-tag">Step 3 of 3 — one shared home for the data</span>
+
+  <div id="modeBanner" class="mode local">
+    <span class="dot"></span>
+    <span id="modeText">Checking storage mode…</span>
+  </div>
+
+  <div class="lesson">
+    The data now lives in a <b>database on a server</b>, not in your browser. Every device
+    that opens this page talks to the <b>same</b> database over the network — so add a task
+    on your laptop, refresh your phone, and it's there. That shared home is the thing
+    localStorage could never be.
+  </div>
+
+  <!-- Shown only when keys are NOT configured yet -->
+  <div class="setup hidden" id="setupCard">Not connected to a database yet — running in local-only fallback.
+
+To switch this class demo to a real shared database:
+<b>1.</b> Make a free account at supabase.com and create a project.
+<b>2.</b> In the SQL editor, run the table + policy script (see the notes file).
+<b>3.</b> Open Project Settings → API, copy the Project URL and the anon public key.
+<b>4.</b> Paste both into the CONFIG block near the top of this file's &lt;script&gt;.
+<b>5.</b> Reload. The banner above should turn blue: "Shared cloud database".</div>
+
+  <!-- SIGN IN -->
+  <div class="card" id="authCard">
+    <h2>Sign in</h2>
+    <label for="user">Username</label>
+    <input type="text" id="user" placeholder="your list is keyed to this name">
+    <label for="pass">Password</label>
+    <input type="password" id="pass" placeholder="still demo-only — see notes on real auth">
+    <button id="signInBtn">Sign in</button>
+  </div>
+
+  <!-- APP -->
+  <div class="card hidden" id="appCard">
+    <div class="who">
+      <span>Signed in as <b id="whoName">—</b></span>
+      <button class="ghost" id="signOutBtn">Sign out</button>
+    </div>
+
+    <h2 style="margin-top:14px">Your tasks</h2>
+    <div class="row">
+      <input type="text" id="taskInput" placeholder="Add a task and press Enter…">
+      <button id="addBtn">Add</button>
+    </div>
+
+    <ul id="list"></ul>
+    <div class="status" id="status"></div>
+
+    <div class="prove">
+      <button class="ghost" id="refreshBtn">Reload from database</button>
+    </div>
+  </div>
+
+  <footer>
+    Frontend → talks over the network → to a <code>database</code> that belongs to no single
+    device. Open this on a second phone or laptop, sign in with the same name, and you'll see
+    the same list. That's the payoff the first two steps were missing.
+  </footer>
+</div>
+
+<!-- Supabase JS client, loaded from their CDN -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+  // =====================================================================
+  // CONFIG — paste your own Supabase values here, then reload.
+  // Leave them as the placeholders to run in local-only fallback mode.
+  // The "anon key" is a public, browser-safe key (that's what it's designed for).
+  // =====================================================================
+  const SUPABASE_URL = 'https://doacbjdqhuewgdsjlkqk.supabase.co';
+  const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRvYWNiamRxaHVld2dkc2psa3FrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODMwNjM2MjcsImV4cCI6MjA5ODYzOTYyN30.EKQ8mGUNa_m3Z4C6mCW94S8yueLhpJLgbqdLlbtD1jk';
+  // =====================================================================
+
+  const CLOUD_READY =
+    SUPABASE_URL.startsWith('http') && !SUPABASE_KEY.startsWith('PASTE_');
+
+  let db = null;
+  if (CLOUD_READY && window.supabase) {
+    db = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+  }
+
+  let currentUser = null;
+  let tasks = [];
+
+  const $ = id => document.getElementById(id);
+  const SESSION_KEY = 'taskvault:session';
+  const localKey = name => 'taskvault:' + name;
+
+  // ---- mode banner ----
+  function showMode() {
+    const banner = $('modeBanner');
+    const text = $('modeText');
+    if (CLOUD_READY) {
+      banner.className = 'mode cloud';
+      text.textContent = 'Shared cloud database — data lives on the server, synced across devices.';
+      $('setupCard').classList.add('hidden');
+    } else {
+      banner.className = 'mode local';
+      text.textContent = 'Local-only fallback — no database connected yet (see setup below).';
+      $('setupCard').classList.remove('hidden');
+    }
+  }
+
+  function setStatus(msg, isErr) {
+    const s = $('status');
+    s.textContent = msg || '';
+    s.className = 'status' + (isErr ? ' err' : '');
+  }
+
+  // ---- data layer: same two functions, two backends ----
+  // loadTasks / saveTask / toggleTask / deleteTask hide WHERE the data lives.
+  // Cloud path uses Supabase; fallback path uses localStorage (Step 2 behaviour).
+
+  async function loadTasks() {
+    if (CLOUD_READY) {
+      setStatus('Loading from database…');
+      const { data, error } = await db
+        .from('tasks')
+        .select('*')
+        .eq('owner', currentUser)
+        .order('id', { ascending: true });
+      if (error) { setStatus('Load failed: ' + error.message, true); return []; }
+      setStatus('Loaded ' + data.length + ' task(s) from the database.');
+      return data;
+    } else {
+      try { return JSON.parse(localStorage.getItem(localKey(currentUser)) || '[]'); }
+      catch (e) { return []; }
+    }
+  }
+
+  async function addRemote(text) {
+    const { data, error } = await db
+      .from('tasks')
+      .insert({ owner: currentUser, text, done: false })
+      .select()
+      .single();
+    if (error) { setStatus('Add failed: ' + error.message, true); return null; }
+    return data;
+  }
+
+  async function setDoneRemote(id, done) {
+    const { error } = await db.from('tasks').update({ done }).eq('id', id);
+    if (error) setStatus('Update failed: ' + error.message, true);
+  }
+
+  async function deleteRemote(id) {
+    const { error } = await db.from('tasks').delete().eq('id', id);
+    if (error) setStatus('Delete failed: ' + error.message, true);
+  }
+
+  function saveLocal() {
+    try { localStorage.setItem(localKey(currentUser), JSON.stringify(tasks)); } catch (e) {}
+  }
+
+  // ---- app flow ----
+  async function enterApp(name) {
+    currentUser = name;
+    $('whoName').textContent = name;
+    $('authCard').classList.add('hidden');
+    $('appCard').classList.remove('hidden');
+    tasks = await loadTasks();
+    render();
+  }
+
+  function signIn() {
+    const name = $('user').value.trim();
+    if (!name) { alert('Type any username. In this demo the list is keyed to the name.'); return; }
+    // password still ignored — see the notes on why real auth needs the server to verify it
+    try { localStorage.setItem(SESSION_KEY, name); } catch (e) {}
+    enterApp(name);
+    $('taskInput').focus();
+  }
+
+  function signOut() {
+    currentUser = null;
+    tasks = [];
+    try { localStorage.removeItem(SESSION_KEY); } catch (e) {}
+    $('user').value = '';
+    $('pass').value = '';
+    $('appCard').classList.add('hidden');
+    $('authCard').classList.remove('hidden');
+    setStatus('');
+  }
+
+  async function addTask() {
+    const text = $('taskInput').value.trim();
+    if (!text) return;
+    $('taskInput').value = '';
+    if (CLOUD_READY) {
+      const row = await addRemote(text);
+      if (row) tasks.push(row);
+    } else {
+      tasks.push({ id: Date.now(), text, done: false });
+      saveLocal();
+    }
+    render();
+  }
+
+  async function toggle(id) {
+    const t = tasks.find(t => t.id === id);
+    if (!t) return;
+    t.done = !t.done;
+    if (CLOUD_READY) await setDoneRemote(id, t.done); else saveLocal();
+    render();
+  }
+
+  async function remove(id) {
+    tasks = tasks.filter(t => t.id !== id);
+    if (CLOUD_READY) await deleteRemote(id); else saveLocal();
+    render();
+  }
+
+  async function reload() {
+    tasks = await loadTasks();
+    render();
+  }
+
+  function render() {
+    const list = $('list');
+    list.innerHTML = '';
+    if (tasks.length === 0) {
+      const li = document.createElement('li');
+      li.innerHTML = '<span class="empty">No tasks yet. Add one — then open this page on another device.</span>';
+      list.appendChild(li);
+      return;
+    }
+    tasks.forEach(t => {
+      const li = document.createElement('li');
+      if (t.done) li.classList.add('done');
+
+      const cb = document.createElement('input');
+      cb.type = 'checkbox';
+      cb.checked = t.done;
+      cb.onchange = () => toggle(t.id);
+
+      const span = document.createElement('span');
+      span.className = 'txt';
+      span.textContent = t.text;
+
+      const del = document.createElement('button');
+      del.textContent = 'delete';
+      del.onclick = () => remove(t.id);
+
+      li.append(cb, span, del);
+      list.appendChild(li);
+    });
+  }
+
+  function restoreSession() {
+    let name = null;
+    try { name = localStorage.getItem(SESSION_KEY); } catch (e) {}
+    if (name) enterApp(name);
+  }
+
+  // wire up
+  $('signInBtn').onclick = signIn;
+  $('signOutBtn').onclick = signOut;
+  $('addBtn').onclick = addTask;
+  $('refreshBtn').onclick = reload;
+  $('taskInput').addEventListener('keydown', e => { if (e.key === 'Enter') addTask(); });
+  $('pass').addEventListener('keydown', e => { if (e.key === 'Enter') signIn(); });
+  $('user').addEventListener('keydown', e => { if (e.key === 'Enter') $('pass').focus(); });
+
+  showMode();
+  restoreSession();
+</script>
+</body>
+</html>

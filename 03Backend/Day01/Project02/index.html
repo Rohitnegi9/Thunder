@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TaskVault — Step 2: local permanent storage</title>
+<style>
+  :root {
+    --ink: #14231b;
+    --paper: #f3efe3;
+    --panel: #fbf9f2;
+    --line: #c9c0a8;
+    --moss: #3f6b4f;
+    --moss-deep: #2c4d38;
+    --clay: #b5502f;
+    --amber: #c68a2e;
+    --muted: #6f6a58;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Iowan Old Style', 'Palatino Linotype', Georgia, serif;
+    background: var(--paper);
+    color: var(--ink);
+    line-height: 1.5;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 24px 16px 60px;
+  }
+  .wrap { width: 100%; max-width: 560px; }
+
+  header.brand {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    border-bottom: 2px solid var(--ink);
+    padding-bottom: 10px;
+    margin-bottom: 4px;
+  }
+  .logo { font-size: 1.5rem; font-weight: 700; letter-spacing: -0.02em; }
+  .logo b { color: var(--moss); }
+  .tagline {
+    font-family: ui-monospace, 'SF Mono', Menlo, monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .step-tag {
+    display: inline-block;
+    font-family: ui-monospace, monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    background: var(--moss);
+    color: #fff;
+    padding: 2px 8px;
+    border-radius: 2px;
+    margin-top: 10px;
+  }
+
+  .lesson {
+    background: repeating-linear-gradient(45deg, #fdf6e3, #fdf6e3 12px, #faefd4 12px, #faefd4 24px);
+    border: 1px solid var(--amber);
+    border-left: 4px solid var(--amber);
+    padding: 12px 14px;
+    margin: 14px 0;
+    font-size: 0.86rem;
+    color: #5a4a1f;
+  }
+  .lesson b { color: var(--clay); }
+  .lesson.win {
+    background: repeating-linear-gradient(45deg, #eef5e8, #eef5e8 12px, #e4efd9 12px, #e4efd9 24px);
+    border-color: var(--moss);
+    border-left-color: var(--moss);
+    color: #2c4d38;
+  }
+  .lesson.win b { color: var(--moss-deep); }
+
+  .card {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 2px;
+    padding: 20px;
+    margin-bottom: 18px;
+    box-shadow: 3px 3px 0 rgba(44,77,56,0.08);
+  }
+  .card h2 {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--muted);
+    font-family: ui-monospace, monospace;
+    margin-bottom: 12px;
+    font-weight: 600;
+  }
+
+  label { display: block; font-size: 0.8rem; margin-bottom: 4px; color: var(--muted); }
+  input[type=text], input[type=password] {
+    width: 100%;
+    padding: 9px 11px;
+    border: 1px solid var(--line);
+    background: #fff;
+    border-radius: 2px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    margin-bottom: 12px;
+  }
+  input:focus { outline: 2px solid var(--moss); outline-offset: 1px; }
+
+  button {
+    font-family: inherit;
+    cursor: pointer;
+    border: none;
+    border-radius: 2px;
+    font-size: 0.9rem;
+    padding: 9px 16px;
+    background: var(--moss);
+    color: #fff;
+    transition: background 0.15s;
+  }
+  button:hover { background: var(--moss-deep); }
+  button.ghost { background: transparent; color: var(--moss-deep); border: 1px solid var(--line); }
+  button.ghost:hover { background: #eee7d3; }
+  button.danger { background: var(--clay); }
+  button.danger:hover { background: #8f3d22; }
+
+  .row { display: flex; gap: 8px; align-items: center; }
+  .row input { margin-bottom: 0; }
+
+  .who {
+    display: flex; align-items: center; justify-content: space-between;
+    font-size: 0.85rem; margin-bottom: 4px;
+  }
+  .who span b { color: var(--moss-deep); }
+
+  ul#list { list-style: none; }
+  #list li {
+    display: flex; align-items: center; gap: 10px;
+    padding: 10px 4px;
+    border-bottom: 1px dashed var(--line);
+  }
+  #list li:last-child { border-bottom: none; }
+  #list li.done .txt { text-decoration: line-through; color: var(--muted); }
+  #list .txt { flex: 1; font-size: 0.98rem; }
+  #list input[type=checkbox] { width: 18px; height: 18px; accent-color: var(--moss); }
+  #list button { padding: 3px 9px; font-size: 0.78rem; background: none; color: var(--clay); }
+  #list button:hover { text-decoration: underline; }
+
+  .empty { color: var(--muted); font-style: italic; padding: 12px 4px; font-size: 0.9rem; }
+  .hidden { display: none !important; }
+
+  .prove { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 12px; }
+
+  .peek {
+    margin-top: 14px;
+    font-family: ui-monospace, monospace;
+    font-size: 0.72rem;
+    background: #14231b;
+    color: #b9d9c4;
+    padding: 10px 12px;
+    border-radius: 2px;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    word-break: break-all;
+  }
+  .peek .k { color: var(--amber); }
+
+  footer {
+    margin-top: 8px;
+    font-size: 0.78rem;
+    color: var(--muted);
+    text-align: center;
+    max-width: 560px;
+  }
+  footer code {
+    font-family: ui-monospace, monospace;
+    background: #e8e1cd;
+    padding: 1px 5px;
+    border-radius: 2px;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="brand">
+    <div class="logo">Task<b>Vault</b></div>
+    <div class="tagline">localStorage · one browser</div>
+  </header>
+  <span class="step-tag">Step 2 of 3 — permanent, but local</span>
+
+  <div class="lesson win">
+    What changed: tasks now save to this browser's <b>localStorage</b>, so they
+    <b>survive a refresh</b> — even survive closing the tab and coming back.
+    Try it: add tasks, refresh, watch them stay.
+  </div>
+
+  <div class="lesson">
+    The catch to feel next: this storage belongs to <b>this one browser on this one
+    machine</b>. Open the same file on your phone, another laptop, or even a different
+    browser here — you'll start empty. The data has no shared home. <b>That's the wall
+    a backend + database breaks through (Step 3).</b>
+  </div>
+
+  <!-- SIGN IN -->
+  <div class="card" id="authCard">
+    <h2>Sign in</h2>
+    <label for="user">Username</label>
+    <input type="text" id="user" placeholder="each name gets its own saved list">
+    <label for="pass">Password</label>
+    <input type="password" id="pass" placeholder="still not verified — see the note in code">
+    <button id="signInBtn">Sign in</button>
+  </div>
+
+  <!-- APP -->
+  <div class="card hidden" id="appCard">
+    <div class="who">
+      <span>Signed in as <b id="whoName">—</b></span>
+      <button class="ghost" id="signOutBtn">Sign out</button>
+    </div>
+
+    <h2 style="margin-top:14px">Your tasks</h2>
+    <div class="row">
+      <input type="text" id="taskInput" placeholder="Add a task and press Enter…">
+      <button id="addBtn">Add</button>
+    </div>
+
+    <ul id="list"></ul>
+
+    <div class="prove">
+      <button class="ghost" onclick="location.reload()">Refresh page</button>
+      <button class="danger" id="wipeBtn">Clear this browser's storage</button>
+    </div>
+
+    <div class="peek" id="peek"></div>
+  </div>
+
+  <footer>
+    Persistence solved, sharing not solved. <code>localStorage</code> is per-browser,
+    per-device. To reach the same list from anywhere, every device must talk to one
+    shared place over the network — a <code>server</code> backed by a <code>database</code>.
+  </footer>
+</div>
+
+<script>
+  // ---- STEP 2: permanent, but only on THIS browser ----
+  // Data now lives in localStorage instead of a plain variable.
+  // It survives refresh — but it is still tied to this one browser profile.
+  // Note: the password is STILL ignored. Real per-user login needs a server (Step 3).
+
+  let currentUser = null;
+  let tasks = [];
+
+  const $ = id => document.getElementById(id);
+  const keyFor = name => 'taskvault:' + name;   // each username gets its own bucket
+  const SESSION_KEY = 'taskvault:session';       // remembers who is "signed in"
+
+  function load(name) {
+    try {
+      const raw = localStorage.getItem(keyFor(name));
+      return raw ? JSON.parse(raw) : [];
+    } catch (e) {
+      return [];   // storage blocked or corrupt — start empty
+    }
+  }
+
+  function save() {
+    if (!currentUser) return;
+    try {
+      localStorage.setItem(keyFor(currentUser), JSON.stringify(tasks));
+    } catch (e) {
+      alert('This environment blocks localStorage. Download the file and open it in a real browser.');
+    }
+  }
+
+  function enterApp(name) {
+    currentUser = name;
+    tasks = load(name);             // pull THIS browser's saved copy for this name
+    $('whoName').textContent = name;
+    $('authCard').classList.add('hidden');
+    $('appCard').classList.remove('hidden');
+    render();
+  }
+
+  function signIn() {
+    const name = $('user').value.trim();
+    if (!name) { alert('Type any username. Each name loads its own saved list from this browser.'); return; }
+    // password read and ignored — still fake auth
+    try { localStorage.setItem(SESSION_KEY, name); } catch (e) {}  // remember across refresh (NOT real auth)
+    enterApp(name);
+    $('taskInput').focus();
+  }
+
+  // On page load, restore the "session" so a refresh doesn't kick you back to sign-in.
+  // Teaching note: this only trusts a username sitting in the browser — anyone could
+  // set it by hand. A real "stay signed in" needs a server-issued token it can verify.
+  function restoreSession() {
+    let name = null;
+    try { name = localStorage.getItem(SESSION_KEY); } catch (e) {}
+    if (name) enterApp(name);
+  }
+
+  function signOut() {
+    // Data stays safely in localStorage; we just drop it from memory and forget the session.
+    // (The tasks are NOT deleted — sign back in with the same name to see them again.)
+    currentUser = null;
+    tasks = [];
+    try { localStorage.removeItem(SESSION_KEY); } catch (e) {}
+    $('user').value = '';
+    $('pass').value = '';
+    $('appCard').classList.add('hidden');
+    $('authCard').classList.remove('hidden');
+  }
+
+  function addTask() {
+    const text = $('taskInput').value.trim();
+    if (!text) return;
+    tasks.push({ id: Date.now(), text, done: false });
+    $('taskInput').value = '';
+    save();
+    render();
+  }
+
+  function toggle(id) {
+    const t = tasks.find(t => t.id === id);
+    if (t) t.done = !t.done;
+    save();
+    render();
+  }
+
+  function remove(id) {
+    tasks = tasks.filter(t => t.id !== id);
+    save();
+    render();
+  }
+
+  function wipe() {
+    if (confirm("Clear this user's saved tasks from THIS browser only? Other browsers/devices are untouched — because they never had a copy.")) {
+      tasks = [];
+      save();
+      render();
+    }
+  }
+
+  function render() {
+    const list = $('list');
+    list.innerHTML = '';
+    if (tasks.length === 0) {
+      const li = document.createElement('li');
+      li.innerHTML = '<span class="empty">No tasks yet. Add a few, then refresh — they\'ll survive now.</span>';
+      list.appendChild(li);
+    } else {
+      tasks.forEach(t => {
+        const li = document.createElement('li');
+        if (t.done) li.classList.add('done');
+
+        const cb = document.createElement('input');
+        cb.type = 'checkbox';
+        cb.checked = t.done;
+        cb.onchange = () => toggle(t.id);
+
+        const span = document.createElement('span');
+        span.className = 'txt';
+        span.textContent = t.text;
+
+        const del = document.createElement('button');
+        del.textContent = 'delete';
+        del.onclick = () => remove(t.id);
+
+        li.append(cb, span, del);
+        list.appendChild(li);
+      });
+    }
+    renderPeek();
+  }
+
+  // Show students the actual bytes sitting in localStorage.
+  function renderPeek() {
+    const peek = $('peek');
+    if (!currentUser) { peek.textContent = ''; return; }
+    const raw = localStorage.getItem(keyFor(currentUser)) || '(nothing saved yet)';
+    peek.innerHTML = '<span class="k">localStorage["' + keyFor(currentUser) + '"]</span> =\n' + raw;
+  }
+
+  $('signInBtn').onclick = signIn;
+  $('signOutBtn').onclick = signOut;
+  $('addBtn').onclick = addTask;
+  $('wipeBtn').onclick = wipe;
+  $('taskInput').addEventListener('keydown', e => { if (e.key === 'Enter') addTask(); });
+  $('pass').addEventListener('keydown', e => { if (e.key === 'Enter') signIn(); });
+  $('user').addEventListener('keydown', e => { if (e.key === 'Enter') $('pass').focus(); });
+
+  // Restore the signed-in user after a refresh (fake session — see restoreSession note).
+  restoreSession();
+</script>
+</body>
+</html>
