@@ -1,0 +1,16 @@
+[
+  {
+    "name": "Rohit Negi",
+    "accountNumber": "2324",
+    "city": "Kotdwar",
+    "age": 20,
+    "balance": 500
+  },
+  {
+    "name": "Mohammad Negi",
+    "accountNumber": "1324",
+    "city": "Up",
+    "age": 10,
+    "balance": 1500
+  }
+]
