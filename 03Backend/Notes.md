@@ -5,3 +5,5 @@ lecture 06 Notes: https://app.notion.com/p/Lecture-06-Express-and-middleware-399
 Lecture07: https://app.notion.com/p/Lecture-07-MongoDB-internal-Architecture-39c43ac5cab98048bae2c02c1fa32830?source=copy_link
 
 Lecture08: https://app.notion.com/p/Lecture08-Create-Your-own-Database-39d43ac5cab98036b6e8c65bf50a731f?source=copy_link
+
+Lecture09: https://app.notion.com/p/Lecture09-MongoDB-and-Mongoose-39f43ac5cab9801da031d61c7de89719?source=copy_link
