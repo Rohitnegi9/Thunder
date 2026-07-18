@@ -1,0 +1,2627 @@
+[
+  {
+    "name": "Apple Smartphone Pro",
+    "slug": "apple-smartphone-pro-1",
+    "brand": "apple",
+    "category": "electronics",
+    "price": 2799,
+    "discount": 3,
+    "stock": 7,
+    "rating": 4.5,
+    "isAvailable": true,
+    "tags": [
+      "electronics",
+      "apple",
+      "new-arrival",
+      "premium"
+    ],
+    "reviews": [
+      {
+        "user": "User1",
+        "comment": "Good product for the price",
+        "rating": 4
+      },
+      {
+        "user": "Customer1",
+        "comment": "Quality is decent and delivery was smooth",
+        "rating": 4
+      }
+    ]
+  },
+  {
+    "name": "Adidas Running Shoes",
+    "slug": "adidas-running-shoes-2",
+    "brand": "adidas",
+    "category": "fashion",
+    "price": 1199,
+    "discount": 6,
+    "stock": 14,
+    "rating": 4.0,
+    "isAvailable": true,
+    "tags": [
+      "fashion",
+      "adidas",
+      "new-arrival",
+      "budget"
+    ],
+    "reviews": [
+      {
+        "user": "User2",
+        "comment": "Good product for the price",
+        "rating": 4
+      },
+      {
+        "user": "Customer2",
+        "comment": "Quality is decent and delivery was smooth",
+        "rating": 4
+      }
+    ]
+  },
+  {
+    "name": "Amul Basmati Rice",
+    "slug": "amul-basmati-rice-3",
+    "brand": "amul",
+    "category": "grocery",
+    "price": 234,
+    "discount": 9,
+    "stock": 21,
+    "rating": 3.5,
+    "isAvailable": true,
+    "tags": [
+      "grocery",
+      "amul",
+      "popular",
+      "budget"
+    ],
+    "reviews": [
+      {
+        "user": "User3",
+        "comment": "Good product for the price",
+        "rating": 4
+      },
+      {
+        "user": "Customer3",
+        "comment": "Quality is decent and delivery was smooth",
+        "rating": 3
+      }
+    ]
+  },
+  {
+    "name": "Home Centre Office Chair",
+    "slug": "home-centre-office-chair-4",
+    "brand": "home centre",
+    "category": "furniture",
+    "price": 6799,
+    "discount": 12,
+    "stock": 28,
+    "rating": 3.0,
+    "isAvailable": true,
+    "tags": [
+      "furniture",
+      "home-centre",
+      "new-arrival",
+      "premium"
+    ],
+    "reviews": []
+  },
+  {
+    "name": "Wiley JavaScript Guide",
+    "slug": "wiley-javascript-guide-5",
+    "brand": "wiley",
+    "category": "books",
+    "price": 799,
+    "discount": 15,
+    "stock": 35,
+    "rating": 4.7,
+    "isAvailable": true,
+    "tags": [
+      "books",
+      "wiley",
+      "new-arrival",
+      "budget"
+    ],
+    "reviews": [
+      {
+        "user": "User5",
+        "comment": "Good product for the price",
+        "rating": 5
+      },
+      {
+        "user": "Customer5",
+        "comment": "Quality is decent and delivery was smooth",
+        "rating": 4
+      }
+    ]
+  },
+  {
+    "name": "Dell Wireless Earbuds",
+    "slug": "dell-wireless-earbuds-6",
+    "brand": "dell",
+    "category": "electronics",
+    "price": 11799,
+    "discount": 18,
+    "stock": 42,
+    "rating": 4.2,
+    "isAvailable": true,
+    "tags": [
+      "electronics",
+      "dell",
+      "popular",
+      "premium"
+    ],
+    "reviews": [
+      {
+        "user": "User6",
+        "comment": "Good product for the price",
+        "rating": 4
+      },
+      {
+        "user": "Customer6",
+        "comment": "Quality is decent and delivery was smooth",
+        "rating": 4
+      }
+    ]
+  },
+  {
+    "name": "Roadster Cotton T-Shirt",
+    "slug": "roadster-cotton-t-shirt-7",
+    "brand": "roadster",
+    "category": "fashion",
+    "price": 2949,
+    "discount": 21,
+    "stock": 49,
+    "rating": 3.7,
+    "isAvailable": true,
+    "tags": [
+      "fashion",
+      "roadster",
+      "new-arrival",
+      "premium"
+    ],
+    "reviews": [
+      {
+        "user": "User7",
+        "comment": "Good product for the price",
+        "rating": 4
+      },
+      {
+        "user": "Customer7",
+        "comment": "Quality is decent and delivery was smooth",
+        "rating": 3
+      }
+    ]
+  },
+  {
+    "name": "Dabur Wheat Flour",
+    "slug": "dabur-wheat-flour-8",
+    "brand": "dabur",
+    "category": "grocery",
+    "price": 459,
+    "discount": 24,
+    "stock": 56,
+    "rating": 3.2,
+    "isAvailable": true,
+    "tags": [
+      "grocery",
+      "dabur",
+      "new-arrival",
+      "budget"
+    ],
+    "reviews": []
+  },
+  {
+    "name": "Royaloak Study Table",
+    "slug": "royaloak-study-table-9",
+    "brand": "royaloak",
+    "category": "furniture",
+    "price": 12799,
+    "discount": 27,
+    "stock": 63,
+    "rating": 4.9,
+    "isAvailable": true,
+    "tags": [
+      "furniture",
+      "royaloak",
+      "popular",
+      "premium"
+    ],
+    "reviews": [
+      {
+        "user": "User9",
+        "comment": "Good product for the price",
+        "rating": 5
+      },
+      {
+        "user": "Customer9",
+        "comment": "Quality is decent and delivery was smooth",
+        "rating": 4
+      }
+    ]
+  },
+  {
+    "name": "Mcgraw Hill Data Structures Handbook",
+    "slug": "mcgraw-hill-data-structures-handbook-10",
+    "brand": "mcgraw hill",
+    "category": "books",
+    "price": 1399,
+    "discount": 30,
+    "stock": 70,
+    "rating": 4.4,
+    "isAvailable": true,
+    "tags": [
+      "books",
+      "mcgraw-hill",
+      "new-arrival",
+      "budget"
+    ],
+    "reviews": [
+      {
+        "user": "User10",
+        "comment": "Good product for the price",
+        "rating": 4
+      },
+      {
+        "user": "Customer10",
+        "comment": "Quality is decent and delivery was smooth",
+        "rating": 4
+      }
+    ]
+  },
+  {
+    "name": "Apple Gaming Laptop",
+    "slug": "apple-gaming-laptop-11",
+    "brand": "apple",
+    "category": "electronics",
+    "price": 20799,
+    "discount": 33,
+    "stock": 77,
+    "rating": 3.9,
+    "isAvailable": true,
+    "tags": [
+      "electronics",
+      "apple",
+      "new-arrival",
+      "premium"
+    ],
+    "reviews": [
+      {
+        "user": "User11",
+        "comment": "Good product for the price",
+        "rating": 4
+      },
+      {
+        "user": "Customer11",
+        "comment": "Quality is decent and delivery was smooth",
+        "rating": 3
+      }
+    ]
+  },
+  {
+    "name": "Adidas Slim Fit Jeans",
+    "slug": "adidas-slim-fit-jeans-12",
+    "brand": "adidas",
+    "category": "fashion",
+    "price": 4699,
+    "discount": 36,
+    "stock": 4,
+    "rating": 3.4,
+    "isAvailable": true,
+    "tags": [
+      "fashion",
+      "adidas",
+      "popular",
+      "premium"
+    ],
+    "reviews": []
+  },
+  {
+    "name": "Amul Organic Honey",
+    "slug": "amul-organic-honey-13",
+    "brand": "amul",
+    "category": "grocery",
+    "price": 684,
+    "discount": 39,
+    "stock": 11,
+    "rating": 2.9,
+    "isAvailable": true,
+    "tags": [
+      "grocery",
+      "amul",
+      "new-arrival",
+      "budget"
+    ],
+    "reviews": [
+      {
+        "user": "User13",
+        "comment": "Good product for the price",
+        "rating": 3
+      },
+      {
+        "user": "Customer13",
+        "comment": "Quality is decent and delivery was smooth",
+        "rating": 2
+      }
+    ]
+  },
+  {
+    "name": "Home Centre Wooden Bookshelf",
+    "slug": "home-centre-wooden-bookshelf-14",
+    "brand": "home centre",
+    "category": "furniture",
+    "price": 18799,
+    "discount": 42,
+    "stock": 18,
+    "rating": 4.6,
+    "isAvailable": true,
+    "tags": [
+      "furniture",
+      "home-centre",
+      "new-arrival",
+      "premium"
+    ],
+    "reviews": [
+      {
+        "user": "User14",
+        "comment": "Good product for the price",
+        "rating": 5
+      },
+      {
+        "user": "Customer14",
+        "comment": "Quality is decent and delivery was smooth",
+        "rating": 4
+      }
+    ]
+  },
+  {
+    "name": "Wiley System Design Basics",
+    "slug": "wiley-system-design-basics-15",
+    "brand": "wiley",
+    "category": "books",
+    "price": 1999,
+    "discount": 45,
+    "stock": 25,
+    "rating": 4.1,
+    "isAvailable": true,
+    "tags": [
+      "books",
+      "wiley",
+      "popular",
+      "budget"
+    ],
+    "reviews": [
+      {
+        "user": "User15",
+        "comment": "Good product for the price",
+        "rating": 4
+      },
+      {
+        "user": "Customer15",
+        "comment": "Quality is decent and delivery was smooth",
+        "rating": 4
+      }
+    ]
+  },
+  {
+    "name": "Dell Bluetooth Speaker",
+    "slug": "dell-bluetooth-speaker-16",
+    "brand": "dell",
+    "category": "electronics",
+    "price": 29799,
+    "discount": 48,
+    "stock": 32,
+    "rating": 3.6,
+    "isAvailable": true,
+    "tags": [
+      "electronics",
+      "dell",
+      "new-arrival",
+      "premium"
+    ],
+    "reviews": []
+  },
+  {
+    "name": "Roadster Casual Shirt",
+    "slug": "roadster-casual-shirt-17",
+    "brand": "roadster",
+    "category": "fashion",
+    "price": 6449,
+    "discount": 1,
+    "stock": 39,
+    "rating": 3.1,
+    "isAvailable": true,
+    "tags": [
+      "fashion",
+      "roadster",
+      "new-arrival",
+      "premium"
+    ],
+    "reviews": [
+      {
+        "user": "User17",
+        "comment": "Good product for the price",
+        "rating": 3
+      },
+      {
+        "user": "Customer17",
+        "comment": "Quality is decent and delivery was smooth",
+        "rating": 3
+      }
+    ]
+  },
+  {
+    "name": "Dabur Instant Noodles",
+    "slug": "dabur-instant-noodles-18",
+    "brand": "dabur",
+    "category": "grocery",
+    "price": 909,
+    "discount": 4,
+    "stock": 46,
+    "rating": 4.8,
+    "isAvailable": true,
+    "tags": [
+      "grocery",
+      "dabur",
+      "popular",
+      "budget"
+    ],
+    "reviews": [
+      {
+        "user": "User18",
+        "comment": "Good product for the price",
+        "rating": 5
+      },
+      {
+        "user": "Customer18",
+        "comment": "Quality is decent and delivery was smooth",
+        "rating": 4
+      }
+    ]
+  },
+  {
+    "name": "Royaloak Queen Bed",
+    "slug": "royaloak-queen-bed-19",
+    "brand": "royaloak",
+    "category": "furniture",
+    "price": 24799,
+    "discount": 7,
+    "stock": 53,
+    "rating": 4.3,
+    "isAvailable": true,
+    "tags": [
+      "furniture",
+      "royaloak",
+      "new-arrival",
+      "premium"
+    ],
+    "reviews": [
+      {
+        "user": "User19",
+        "comment": "Good product for the price",
+        "rating": 4
+      },
+      {
+        "user": "Customer19",
+        "comment": "Quality is decent and delivery was smooth",
+        "rating": 4
+      }
+    ]
+  },
+  {
+    "name": "Mcgraw Hill Clean Code",
+    "slug": "mcgraw-hill-clean-code-20",
+    "brand": "mcgraw hill",
+    "category": "books",
+    "price": 2599,
+    "discount": 10,
+    "stock": 60,
+    "rating": 3.8,
+    "isAvailable": true,
+    "tags": [
+      "books",
+      "mcgraw-hill",
+      "new-arrival",
+      "premium"
+    ],
+    "reviews": []
+  },
+  {
+    "name": "Apple Smart Watch",
+    "slug": "apple-smart-watch-21",
+    "brand": "apple",
+    "category": "electronics",
+    "price": 38799,
+    "discount": 13,
+    "stock": 67,
+    "rating": 3.3,
+    "isAvailable": true,
+    "tags": [
+      "electronics",
+      "apple",
+      "popular",
+      "premium"
+    ],
+    "reviews": [
+      {
+        "user": "User21",
+        "comment": "Good product for the price",
+        "rating": 3
+      },
+      {
+        "user": "Customer21",
+        "comment": "Quality is decent and delivery was smooth",
+        "rating": 3
+      }
+    ]
+  },
+  {
+    "name": "Adidas Hoodie",
+    "slug": "adidas-hoodie-22",
+    "brand": "adidas",
+    "category": "fashion",
+    "price": 1199,
+    "discount": 16,
+    "stock": 74,
+    "rating": 2.8,
+    "isAvailable": true,
+    "tags": [
+      "fashion",
+      "adidas",
+      "new-arrival",
+      "budget"
+    ],
+    "reviews": [
+      {
+        "user": "User22",
+        "comment": "Good product for the price",
+        "rating": 3
+      },
+      {
+        "user": "Customer22",
+        "comment": "Quality is decent and delivery was smooth",
+        "rating": 2
+      }
+    ]
+  },
+  {
+    "name": "Amul Green Tea",
+    "slug": "amul-green-tea-23",
+    "brand": "amul",
+    "category": "grocery",
+    "price": 1134,
+    "discount": 19,
+    "stock": 1,
+    "rating": 4.5,
+    "isAvailable": true,
+    "tags": [
+      "grocery",
+      "amul",
+      "new-arrival",
+      "budget"
+    ],
+    "reviews": [
+      {
+        "user": "User23",
+        "comment": "Good product for the price",
+        "rating": 4
+      },
+      {
+        "user": "Customer23",
+        "comment": "Quality is decent and delivery was smooth",
+        "rating": 4
+      }
+    ]
+  },
+  {
+    "name": "Home Centre Sofa Set",
+    "slug": "home-centre-sofa-set-24",
+    "brand": "home centre",
+    "category": "furniture",
+    "price": 30799,
+    "discount": 22,
+    "stock": 8,
+    "rating": 4.0,
+    "isAvailable": true,
+    "tags": [
+      "furniture",
+      "home-centre",
+      "popular",
+      "premium"
+    ],
+    "reviews": []
+  },
+  {
+    "name": "Wiley Operating Systems Made Easy",
+    "slug": "wiley-operating-systems-made-easy-25",
+    "brand": "wiley",
+    "category": "books",
+    "price": 199,
+    "discount": 25,
+    "stock": 15,
+    "rating": 3.5,
+    "isAvailable": true,
+    "tags": [
+      "books",
+      "wiley",
+      "new-arrival",
+      "budget"
+    ],
+    "reviews": [
+      {
+        "user": "User25",
+        "comment": "Good product for the price",
+        "rating": 4
+      },
+      {
+        "user": "Customer25",
+        "comment": "Quality is decent and delivery was smooth",
+        "rating": 3
+      }
+    ]
+  },
+  {
+    "name": "Dell LED Monitor",
+    "slug": "dell-led-monitor-26",
+    "brand": "dell",
+    "category": "electronics",
+    "price": 47799,
+    "discount": 28,
+    "stock": 22,
+    "rating": 3.0,
+    "isAvailable": true,
+    "tags": [
+      "electronics",
+      "dell",
+      "new-arrival",
+      "premium"
+    ],
+    "reviews": [
+      {
+        "user": "User26",
+        "comment": "Good product for the price",
+        "rating": 3
+      },
+      {
+        "user": "Customer26",
+        "comment": "Quality is decent and delivery was smooth",
+        "rating": 2
+      }
+    ]
+  },
+  {
+    "name": "Roadster Sports Jacket",
+    "slug": "roadster-sports-jacket-27",
+    "brand": "roadster",
+    "category": "fashion",
+    "price": 2949,
+    "discount": 31,
+    "stock": 29,
+    "rating": 4.7,
+    "isAvailable": true,
+    "tags": [
+      "fashion",
+      "roadster",
+      "popular",
+      "premium"
+    ],
+    "reviews": [
+      {
+        "user": "User27",
+        "comment": "Good product for the price",
+        "rating": 5
+      },
+      {
+        "user": "Customer27",
+        "comment": "Quality is decent and delivery was smooth",
+        "rating": 4
+      }
+    ]
+  },
+  {
+    "name": "Dabur Peanut Butter",
+    "slug": "dabur-peanut-butter-28",
+    "brand": "dabur",
+    "category": "grocery",
+    "price": 1359,
+    "discount": 34,
+    "stock": 36,
+    "rating": 4.2,
+    "isAvailable": true,
+    "tags": [
+      "grocery",
+      "dabur",
+      "new-arrival",
+      "budget"
+    ],
+    "reviews": []
+  },
+  {
+    "name": "Royaloak Coffee Table",
+    "slug": "royaloak-coffee-table-29",
+    "brand": "royaloak",
+    "category": "furniture",
+    "price": 36799,
+    "discount": 37,
+    "stock": 43,
+    "rating": 3.7,
+    "isAvailable": true,
+    "tags": [
+      "furniture",
+      "royaloak",
+      "new-arrival",
+      "premium"
+    ],
+    "reviews": [
+      {
+        "user": "User29",
+        "comment": "Good product for the price",
+        "rating": 4
+      },
+      {
+        "user": "Customer29",
+        "comment": "Quality is decent and delivery was smooth",
+        "rating": 3
+      }
+    ]
+  },
+  {
+    "name": "Mcgraw Hill Database Internals",
+    "slug": "mcgraw-hill-database-internals-30",
+    "brand": "mcgraw hill",
+    "category": "books",
+    "price": 799,
+    "discount": 40,
+    "stock": 50,
+    "rating": 3.2,
+    "isAvailable": true,
+    "tags": [
+      "books",
+      "mcgraw-hill",
+      "popular",
+      "budget"
+    ],
+    "reviews": [
+      {
+        "user": "User30",
+        "comment": "Good product for the price",
+        "rating": 3
+      },
+      {
+        "user": "Customer30",
+        "comment": "Quality is decent and delivery was smooth",
+        "rating": 3
+      }
+    ]
+  },
+  {
+    "name": "Apple Mechanical Keyboard",
+    "slug": "apple-mechanical-keyboard-31",
+    "brand": "apple",
+    "category": "electronics",
+    "price": 56799,
+    "discount": 43,
+    "stock": 57,
+    "rating": 4.9,
+    "isAvailable": true,
+    "tags": [
+      "electronics",
+      "apple",
+      "new-arrival",
+      "premium"
+    ],
+    "reviews": [
+      {
+        "user": "User31",
+        "comment": "Good product for the price",
+        "rating": 5
+      },
+      {
+        "user": "Customer31",
+        "comment": "Quality is decent and delivery was smooth",
+        "rating": 4
+      }
+    ]
+  },
+  {
+    "name": "Adidas Formal Trousers",
+    "slug": "adidas-formal-trousers-32",
+    "brand": "adidas",
+    "category": "fashion",
+    "price": 4699,
+    "discount": 46,
+    "stock": 64,
+    "rating": 4.4,
+    "isAvailable": true,
+    "tags": [
+      "fashion",
+      "adidas",
+      "new-arrival",
+      "premium"
+    ],
+    "reviews": []
+  },
+  {
+    "name": "Amul Corn Flakes",
+    "slug": "amul-corn-flakes-33",
+    "brand": "amul",
+    "category": "grocery",
+    "price": 1584,
+    "discount": 49,
+    "stock": 71,
+    "rating": 3.9,
+    "isAvailable": true,
+    "tags": [
+      "grocery",
+      "amul",
+      "popular",
+      "budget"
+    ],
+    "reviews": [
+      {
+        "user": "User33",
+        "comment": "Good product for the price",
+        "rating": 4
+      },
+      {
+        "user": "Customer33",
+        "comment": "Quality is decent and delivery was smooth",
+        "rating": 3
+      }
+    ]
+  },
+  {
+    "name": "Home Centre Dining Table",
+    "slug": "home-centre-dining-table-34",
+    "brand": "home centre",
+    "category": "furniture",
+    "price": 42799,
+    "discount": 2,
+    "stock": 78,
+    "rating": 3.4,
+    "isAvailable": true,
+    "tags": [
+      "furniture",
+      "home-centre",
+      "new-arrival",
+      "premium"
+    ],
+    "reviews": [
+      {
+        "user": "User34",
+        "comment": "Good product for the price",
+        "rating": 3
+      },
+      {
+        "user": "Customer34",
+        "comment": "Quality is decent and delivery was smooth",
+        "rating": 3
+      }
+    ]
+  },
+  {
+    "name": "Wiley Computer Networks Primer",
+    "slug": "wiley-computer-networks-primer-35",
+    "brand": "wiley",
+    "category": "books",
+    "price": 1399,
+    "discount": 5,
+    "stock": 5,
+    "rating": 2.9,
+    "isAvailable": true,
+    "tags": [
+      "books",
+      "wiley",
+      "new-arrival",
+      "budget"
+    ],
+    "reviews": [
+      {
+        "user": "User35",
+        "comment": "Good product for the price",
+        "rating": 3
+      },
+      {
+        "user": "Customer35",
+        "comment": "Quality is decent and delivery was smooth",
+        "rating": 2
+      }
+    ]
+  },
+  {
+    "name": "Dell Wireless Mouse",
+    "slug": "dell-wireless-mouse-36",
+    "brand": "dell",
+    "category": "electronics",
+    "price": 65799,
+    "discount": 8,
+    "stock": 12,
+    "rating": 4.6,
+    "isAvailable": true,
+    "tags": [
+      "electronics",
+      "dell",
+      "popular",
+      "premium"
+    ],
+    "reviews": []
+  },
+  {
+    "name": "Roadster Leather Belt",
+    "slug": "roadster-leather-belt-37",
+    "brand": "roadster",
+    "category": "fashion",
+    "price": 6449,
+    "discount": 11,
+    "stock": 19,
+    "rating": 4.1,
+    "isAvailable": true,
+    "tags": [
+      "fashion",
+      "roadster",
+      "new-arrival",
+      "premium"
+    ],
+    "reviews": [
+      {
+        "user": "User37",
+        "comment": "Good product for the price",
+        "rating": 4
+      },
+      {
+        "user": "Customer37",
+        "comment": "Quality is decent and delivery was smooth",
+        "rating": 4
+      }
+    ]
+  },
+  {
+    "name": "Dabur Dark Chocolate",
+    "slug": "dabur-dark-chocolate-38",
+    "brand": "dabur",
+    "category": "grocery",
+    "price": 1809,
+    "discount": 14,
+    "stock": 26,
+    "rating": 3.6,
+    "isAvailable": true,
+    "tags": [
+      "grocery",
+      "dabur",
+      "new-arrival",
+      "budget"
+    ],
+    "reviews": [
+      {
+        "user": "User38",
+        "comment": "Good product for the price",
+        "rating": 4
+      },
+      {
+        "user": "Customer38",
+        "comment": "Quality is decent and delivery was smooth",
+        "rating": 3
+      }
+    ]
+  },
+  {
+    "name": "Royaloak TV Unit",
+    "slug": "royaloak-tv-unit-39",
+    "brand": "royaloak",
+    "category": "furniture",
+    "price": 48799,
+    "discount": 17,
+    "stock": 33,
+    "rating": 3.1,
+    "isAvailable": true,
+    "tags": [
+      "furniture",
+      "royaloak",
+      "popular",
+      "premium"
+    ],
+    "reviews": [
+      {
+        "user": "User39",
+        "comment": "Good product for the price",
+        "rating": 3
+      },
+      {
+        "user": "Customer39",
+        "comment": "Quality is decent and delivery was smooth",
+        "rating": 3
+      }
+    ]
+  },
+  {
+    "name": "Mcgraw Hill Machine Learning Intro",
+    "slug": "mcgraw-hill-machine-learning-intro-40",
+    "brand": "mcgraw hill",
+    "category": "books",
+    "price": 1999,
+    "discount": 20,
+    "stock": 40,
+    "rating": 4.8,
+    "isAvailable": true,
+    "tags": [
+      "books",
+      "mcgraw-hill",
+      "new-arrival",
+      "budget"
+    ],
+    "reviews": []
+  },
+  {
+    "name": "Apple Power Bank",
+    "slug": "apple-power-bank-41",
+    "brand": "apple",
+    "category": "electronics",
+    "price": 74799,
+    "discount": 23,
+    "stock": 47,
+    "rating": 4.3,
+    "isAvailable": true,
+    "tags": [
+      "electronics",
+      "apple",
+      "new-arrival",
+      "premium"
+    ],
+    "reviews": [
+      {
+        "user": "User41",
+        "comment": "Good product for the price",
+        "rating": 4
+      },
+      {
+        "user": "Customer41",
+        "comment": "Quality is decent and delivery was smooth",
+        "rating": 4
+      }
+    ]
+  },
+  {
+    "name": "Adidas Sneakers",
+    "slug": "adidas-sneakers-42",
+    "brand": "adidas",
+    "category": "fashion",
+    "price": 1199,
+    "discount": 26,
+    "stock": 54,
+    "rating": 3.8,
+    "isAvailable": true,
+    "tags": [
+      "fashion",
+      "adidas",
+      "popular",
+      "budget"
+    ],
+    "reviews": [
+      {
+        "user": "User42",
+        "comment": "Good product for the price",
+        "rating": 4
+      },
+      {
+        "user": "Customer42",
+        "comment": "Quality is decent and delivery was smooth",
+        "rating": 3
+      }
+    ]
+  },
+  {
+    "name": "Amul Olive Oil",
+    "slug": "amul-olive-oil-43",
+    "brand": "amul",
+    "category": "grocery",
+    "price": 2034,
+    "discount": 29,
+    "stock": 61,
+    "rating": 3.3,
+    "isAvailable": true,
+    "tags": [
+      "grocery",
+      "amul",
+      "new-arrival",
+      "premium"
+    ],
+    "reviews": [
+      {
+        "user": "User43",
+        "comment": "Good product for the price",
+        "rating": 3
+      },
+      {
+        "user": "Customer43",
+        "comment": "Quality is decent and delivery was smooth",
+        "rating": 3
+      }
+    ]
+  },
+  {
+    "name": "Home Centre Shoe Rack",
+    "slug": "home-centre-shoe-rack-44",
+    "brand": "home centre",
+    "category": "furniture",
+    "price": 54799,
+    "discount": 32,
+    "stock": 68,
+    "rating": 2.8,
+    "isAvailable": true,
+    "tags": [
+      "furniture",
+      "home-centre",
+      "new-arrival",
+      "premium"
+    ],
+    "reviews": []
+  },
+  {
+    "name": "Wiley Web Development Roadmap",
+    "slug": "wiley-web-development-roadmap-45",
+    "brand": "wiley",
+    "category": "books",
+    "price": 2599,
+    "discount": 35,
+    "stock": 75,
+    "rating": 4.5,
+    "isAvailable": true,
+    "tags": [
+      "books",
+      "wiley",
+      "popular",
+      "premium"
+    ],
+    "reviews": [
+      {
+        "user": "User45",
+        "comment": "Good product for the price",
+        "rating": 4
+      },
+      {
+        "user": "Customer45",
+        "comment": "Quality is decent and delivery was smooth",
+        "rating": 4
+      }
+    ]
+  },
+  {
+    "name": "Dell Tablet Plus",
+    "slug": "dell-tablet-plus-46",
+    "brand": "dell",
+    "category": "electronics",
+    "price": 83799,
+    "discount": 38,
+    "stock": 2,
+    "rating": 4.0,
+    "isAvailable": true,
+    "tags": [
+      "electronics",
+      "dell",
+      "new-arrival",
+      "premium"
+    ],
+    "reviews": [
+      {
+        "user": "User46",
+        "comment": "Good product for the price",
+        "rating": 4
+      },
+      {
+        "user": "Customer46",
+        "comment": "Quality is decent and delivery was smooth",
+        "rating": 4
+      }
+    ]
+  },
+  {
+    "name": "Roadster Polo T-Shirt",
+    "slug": "roadster-polo-t-shirt-47",
+    "brand": "roadster",
+    "category": "fashion",
+    "price": 2949,
+    "discount": 41,
+    "stock": 9,
+    "rating": 3.5,
+    "isAvailable": true,
+    "tags": [
+      "fashion",
+      "roadster",
+      "new-arrival",
+      "premium"
+    ],
+    "reviews": [
+      {
+        "user": "User47",
+        "comment": "Good product for the price",
+        "rating": 4
+      },
+      {
+        "user": "Customer47",
+        "comment": "Quality is decent and delivery was smooth",
+        "rating": 3
+      }
+    ]
+  },
+  {
+    "name": "Dabur Mixed Dry Fruits",
+    "slug": "dabur-mixed-dry-fruits-48",
+    "brand": "dabur",
+    "category": "grocery",
+    "price": 2259,
+    "discount": 44,
+    "stock": 16,
+    "rating": 3.0,
+    "isAvailable": true,
+    "tags": [
+      "grocery",
+      "dabur",
+      "popular",
+      "premium"
+    ],
+    "reviews": []
+  },
+  {
+    "name": "Royaloak Recliner Chair",
+    "slug": "royaloak-recliner-chair-49",
+    "brand": "royaloak",
+    "category": "furniture",
+    "price": 60799,
+    "discount": 47,
+    "stock": 23,
+    "rating": 4.7,
+    "isAvailable": true,
+    "tags": [
+      "furniture",
+      "royaloak",
+      "new-arrival",
+      "premium"
+    ],
+    "reviews": [
+      {
+        "user": "User49",
+        "comment": "Good product for the price",
+        "rating": 5
+      },
+      {
+        "user": "Customer49",
+        "comment": "Quality is decent and delivery was smooth",
+        "rating": 4
+      }
+    ]
+  },
+  {
+    "name": "Mcgraw Hill Python Crash Course",
+    "slug": "mcgraw-hill-python-crash-course-50",
+    "brand": "mcgraw hill",
+    "category": "books",
+    "price": 199,
+    "discount": 0,
+    "stock": 30,
+    "rating": 4.2,
+    "isAvailable": true,
+    "tags": [
+      "books",
+      "mcgraw-hill",
+      "new-arrival",
+      "budget"
+    ],
+    "reviews": [
+      {
+        "user": "User50",
+        "comment": "Good product for the price",
+        "rating": 4
+      },
+      {
+        "user": "Customer50",
+        "comment": "Quality is decent and delivery was smooth",
+        "rating": 4
+      }
+    ]
+  },
+  {
+    "name": "Apple Noise Cancelling Headphones",
+    "slug": "apple-noise-cancelling-headphones-51",
+    "brand": "apple",
+    "category": "electronics",
+    "price": 2799,
+    "discount": 3,
+    "stock": 37,
+    "rating": 3.7,
+    "isAvailable": true,
+    "tags": [
+      "electronics",
+      "apple",
+      "popular",
+      "premium"
+    ],
+    "reviews": [
+      {
+        "user": "User51",
+        "comment": "Good product for the price",
+        "rating": 4
+      },
+      {
+        "user": "Customer51",
+        "comment": "Quality is decent and delivery was smooth",
+        "rating": 3
+      }
+    ]
+  },
+  {
+    "name": "Adidas Denim Jacket",
+    "slug": "adidas-denim-jacket-52",
+    "brand": "adidas",
+    "category": "fashion",
+    "price": 4699,
+    "discount": 6,
+    "stock": 44,
+    "rating": 3.2,
+    "isAvailable": true,
+    "tags": [
+      "fashion",
+      "adidas",
+      "new-arrival",
+      "premium"
+    ],
+    "reviews": []
+  },
+  {
+    "name": "Amul Masala Oats",
+    "slug": "amul-masala-oats-53",
+    "brand": "amul",
+    "category": "grocery",
+    "price": 2484,
+    "discount": 9,
+    "stock": 51,
+    "rating": 4.9,
+    "isAvailable": true,
+    "tags": [
+      "grocery",
+      "amul",
+      "new-arrival",
+      "premium"
+    ],
+    "reviews": [
+      {
+        "user": "User53",
+        "comment": "Good product for the price",
+        "rating": 5
+      },
+      {
+        "user": "Customer53",
+        "comment": "Quality is decent and delivery was smooth",
+        "rating": 4
+      }
+    ]
+  },
+  {
+    "name": "Home Centre Wardrobe",
+    "slug": "home-centre-wardrobe-54",
+    "brand": "home centre",
+    "category": "furniture",
+    "price": 6799,
+    "discount": 12,
+    "stock": 58,
+    "rating": 4.4,
+    "isAvailable": true,
+    "tags": [
+      "furniture",
+      "home-centre",
+      "popular",
+      "premium"
+    ],
+    "reviews": [
+      {
+        "user": "User54",
+        "comment": "Good product for the price",
+        "rating": 4
+      },
+      {
+        "user": "Customer54",
+        "comment": "Quality is decent and delivery was smooth",
+        "rating": 4
+      }
+    ]
+  },
+  {
+    "name": "Wiley C++ Programming",
+    "slug": "wiley-c++-programming-55",
+    "brand": "wiley",
+    "category": "books",
+    "price": 799,
+    "discount": 15,
+    "stock": 65,
+    "rating": 3.9,
+    "isAvailable": true,
+    "tags": [
+      "books",
+      "wiley",
+      "new-arrival",
+      "budget"
+    ],
+    "reviews": [
+      {
+        "user": "User55",
+        "comment": "Good product for the price",
+        "rating": 4
+      },
+      {
+        "user": "Customer55",
+        "comment": "Quality is decent and delivery was smooth",
+        "rating": 3
+      }
+    ]
+  },
+  {
+    "name": "Dell 4K Smart TV",
+    "slug": "dell-4k-smart-tv-56",
+    "brand": "dell",
+    "category": "electronics",
+    "price": 11799,
+    "discount": 18,
+    "stock": 72,
+    "rating": 3.4,
+    "isAvailable": true,
+    "tags": [
+      "electronics",
+      "dell",
+      "new-arrival",
+      "premium"
+    ],
+    "reviews": []
+  },
+  {
+    "name": "Roadster Track Pants",
+    "slug": "roadster-track-pants-57",
+    "brand": "roadster",
+    "category": "fashion",
+    "price": 6449,
+    "discount": 21,
+    "stock": 79,
+    "rating": 2.9,
+    "isAvailable": true,
+    "tags": [
+      "fashion",
+      "roadster",
+      "popular",
+      "premium"
+    ],
+    "reviews": [
+      {
+        "user": "User57",
+        "comment": "Good product for the price",
+        "rating": 3
+      },
+      {
+        "user": "Customer57",
+        "comment": "Quality is decent and delivery was smooth",
+        "rating": 2
+      }
+    ]
+  },
+  {
+    "name": "Dabur Almond Milk",
+    "slug": "dabur-almond-milk-58",
+    "brand": "dabur",
+    "category": "grocery",
+    "price": 209,
+    "discount": 24,
+    "stock": 6,
+    "rating": 4.6,
+    "isAvailable": true,
+    "tags": [
+      "grocery",
+      "dabur",
+      "new-arrival",
+      "budget"
+    ],
+    "reviews": [
+      {
+        "user": "User58",
+        "comment": "Good product for the price",
+        "rating": 5
+      },
+      {
+        "user": "Customer58",
+        "comment": "Quality is decent and delivery was smooth",
+        "rating": 4
+      }
+    ]
+  },
+  {
+    "name": "Royaloak Bedside Table",
+    "slug": "royaloak-bedside-table-59",
+    "brand": "royaloak",
+    "category": "furniture",
+    "price": 12799,
+    "discount": 27,
+    "stock": 13,
+    "rating": 4.1,
+    "isAvailable": true,
+    "tags": [
+      "furniture",
+      "royaloak",
+      "new-arrival",
+      "premium"
+    ],
+    "reviews": [
+      {
+        "user": "User59",
+        "comment": "Good product for the price",
+        "rating": 4
+      },
+      {
+        "user": "Customer59",
+        "comment": "Quality is decent and delivery was smooth",
+        "rating": 4
+      }
+    ]
+  },
+  {
+    "name": "Mcgraw Hill MongoDB Essentials",
+    "slug": "mcgraw-hill-mongodb-essentials-60",
+    "brand": "mcgraw hill",
+    "category": "books",
+    "price": 1399,
+    "discount": 30,
+    "stock": 20,
+    "rating": 3.6,
+    "isAvailable": true,
+    "tags": [
+      "books",
+      "mcgraw-hill",
+      "popular",
+      "budget"
+    ],
+    "reviews": []
+  },
+  {
+    "name": "Apple USB-C Hub",
+    "slug": "apple-usb-c-hub-61",
+    "brand": "apple",
+    "category": "electronics",
+    "price": 20799,
+    "discount": 33,
+    "stock": 27,
+    "rating": 3.1,
+    "isAvailable": true,
+    "tags": [
+      "electronics",
+      "apple",
+      "new-arrival",
+      "premium"
+    ],
+    "reviews": [
+      {
+        "user": "User61",
+        "comment": "Good product for the price",
+        "rating": 3
+      },
+      {
+        "user": "Customer61",
+        "comment": "Quality is decent and delivery was smooth",
+        "rating": 3
+      }
+    ]
+  },
+  {
+    "name": "Adidas Sunglasses",
+    "slug": "adidas-sunglasses-62",
+    "brand": "adidas",
+    "category": "fashion",
+    "price": 1199,
+    "discount": 36,
+    "stock": 34,
+    "rating": 4.8,
+    "isAvailable": true,
+    "tags": [
+      "fashion",
+      "adidas",
+      "new-arrival",
+      "budget"
+    ],
+    "reviews": [
+      {
+        "user": "User62",
+        "comment": "Good product for the price",
+        "rating": 5
+      },
+      {
+        "user": "Customer62",
+        "comment": "Quality is decent and delivery was smooth",
+        "rating": 4
+      }
+    ]
+  },
+  {
+    "name": "Amul Coffee Powder",
+    "slug": "amul-coffee-powder-63",
+    "brand": "amul",
+    "category": "grocery",
+    "price": 434,
+    "discount": 39,
+    "stock": 41,
+    "rating": 4.3,
+    "isAvailable": true,
+    "tags": [
+      "grocery",
+      "amul",
+      "popular",
+      "budget"
+    ],
+    "reviews": [
+      {
+        "user": "User63",
+        "comment": "Good product for the price",
+        "rating": 4
+      },
+      {
+        "user": "Customer63",
+        "comment": "Quality is decent and delivery was smooth",
+        "rating": 4
+      }
+    ]
+  },
+  {
+    "name": "Home Centre Wall Shelf",
+    "slug": "home-centre-wall-shelf-64",
+    "brand": "home centre",
+    "category": "furniture",
+    "price": 18799,
+    "discount": 42,
+    "stock": 48,
+    "rating": 3.8,
+    "isAvailable": true,
+    "tags": [
+      "furniture",
+      "home-centre",
+      "new-arrival",
+      "premium"
+    ],
+    "reviews": []
+  },
+  {
+    "name": "Wiley React Deep Dive",
+    "slug": "wiley-react-deep-dive-65",
+    "brand": "wiley",
+    "category": "books",
+    "price": 1999,
+    "discount": 45,
+    "stock": 55,
+    "rating": 3.3,
+    "isAvailable": true,
+    "tags": [
+      "books",
+      "wiley",
+      "new-arrival",
+      "budget"
+    ],
+    "reviews": [
+      {
+        "user": "User65",
+        "comment": "Good product for the price",
+        "rating": 3
+      },
+      {
+        "user": "Customer65",
+        "comment": "Quality is decent and delivery was smooth",
+        "rating": 3
+      }
+    ]
+  },
+  {
+    "name": "Dell Portable SSD",
+    "slug": "dell-portable-ssd-66",
+    "brand": "dell",
+    "category": "electronics",
+    "price": 29799,
+    "discount": 48,
+    "stock": 62,
+    "rating": 2.8,
+    "isAvailable": true,
+    "tags": [
+      "electronics",
+      "dell",
+      "popular",
+      "premium"
+    ],
+    "reviews": [
+      {
+        "user": "User66",
+        "comment": "Good product for the price",
+        "rating": 3
+      },
+      {
+        "user": "Customer66",
+        "comment": "Quality is decent and delivery was smooth",
+        "rating": 2
+      }
+    ]
+  },
+  {
+    "name": "Roadster Backpack",
+    "slug": "roadster-backpack-67",
+    "brand": "roadster",
+    "category": "fashion",
+    "price": 2949,
+    "discount": 1,
+    "stock": 69,
+    "rating": 4.5,
+    "isAvailable": true,
+    "tags": [
+      "fashion",
+      "roadster",
+      "new-arrival",
+      "premium"
+    ],
+    "reviews": [
+      {
+        "user": "User67",
+        "comment": "Good product for the price",
+        "rating": 4
+      },
+      {
+        "user": "Customer67",
+        "comment": "Quality is decent and delivery was smooth",
+        "rating": 4
+      }
+    ]
+  },
+  {
+    "name": "Dabur Digestive Biscuits",
+    "slug": "dabur-digestive-biscuits-68",
+    "brand": "dabur",
+    "category": "grocery",
+    "price": 659,
+    "discount": 4,
+    "stock": 76,
+    "rating": 4.0,
+    "isAvailable": true,
+    "tags": [
+      "grocery",
+      "dabur",
+      "new-arrival",
+      "budget"
+    ],
+    "reviews": []
+  },
+  {
+    "name": "Royaloak Folding Chair",
+    "slug": "royaloak-folding-chair-69",
+    "brand": "royaloak",
+    "category": "furniture",
+    "price": 24799,
+    "discount": 7,
+    "stock": 3,
+    "rating": 3.5,
+    "isAvailable": true,
+    "tags": [
+      "furniture",
+      "royaloak",
+      "popular",
+      "premium"
+    ],
+    "reviews": [
+      {
+        "user": "User69",
+        "comment": "Good product for the price",
+        "rating": 4
+      },
+      {
+        "user": "Customer69",
+        "comment": "Quality is decent and delivery was smooth",
+        "rating": 3
+      }
+    ]
+  },
+  {
+    "name": "Mcgraw Hill Node.js in Practice",
+    "slug": "mcgraw-hill-nodejs-in-practice-70",
+    "brand": "mcgraw hill",
+    "category": "books",
+    "price": 2599,
+    "discount": 10,
+    "stock": 10,
+    "rating": 3.0,
+    "isAvailable": true,
+    "tags": [
+      "books",
+      "mcgraw-hill",
+      "new-arrival",
+      "premium"
+    ],
+    "reviews": [
+      {
+        "user": "User70",
+        "comment": "Good product for the price",
+        "rating": 3
+      },
+      {
+        "user": "Customer70",
+        "comment": "Quality is decent and delivery was smooth",
+        "rating": 2
+      }
+    ]
+  },
+  {
+    "name": "Apple Action Camera",
+    "slug": "apple-action-camera-71",
+    "brand": "apple",
+    "category": "electronics",
+    "price": 38799,
+    "discount": 13,
+    "stock": 17,
+    "rating": 4.7,
+    "isAvailable": true,
+    "tags": [
+      "electronics",
+      "apple",
+      "new-arrival",
+      "premium"
+    ],
+    "reviews": [
+      {
+        "user": "User71",
+        "comment": "Good product for the price",
+        "rating": 5
+      },
+      {
+        "user": "Customer71",
+        "comment": "Quality is decent and delivery was smooth",
+        "rating": 4
+      }
+    ]
+  },
+  {
+    "name": "Adidas Wrist Watch",
+    "slug": "adidas-wrist-watch-72",
+    "brand": "adidas",
+    "category": "fashion",
+    "price": 4699,
+    "discount": 16,
+    "stock": 24,
+    "rating": 4.2,
+    "isAvailable": true,
+    "tags": [
+      "fashion",
+      "adidas",
+      "popular",
+      "premium"
+    ],
+    "reviews": []
+  },
+  {
+    "name": "Amul Tomato Ketchup",
+    "slug": "amul-tomato-ketchup-73",
+    "brand": "amul",
+    "category": "grocery",
+    "price": 884,
+    "discount": 19,
+    "stock": 31,
+    "rating": 3.7,
+    "isAvailable": true,
+    "tags": [
+      "grocery",
+      "amul",
+      "new-arrival",
+      "budget"
+    ],
+    "reviews": [
+      {
+        "user": "User73",
+        "comment": "Good product for the price",
+        "rating": 4
+      },
+      {
+        "user": "Customer73",
+        "comment": "Quality is decent and delivery was smooth",
+        "rating": 3
+      }
+    ]
+  },
+  {
+    "name": "Home Centre Mattress",
+    "slug": "home-centre-mattress-74",
+    "brand": "home centre",
+    "category": "furniture",
+    "price": 30799,
+    "discount": 22,
+    "stock": 38,
+    "rating": 3.2,
+    "isAvailable": true,
+    "tags": [
+      "furniture",
+      "home-centre",
+      "new-arrival",
+      "premium"
+    ],
+    "reviews": [
+      {
+        "user": "User74",
+        "comment": "Good product for the price",
+        "rating": 3
+      },
+      {
+        "user": "Customer74",
+        "comment": "Quality is decent and delivery was smooth",
+        "rating": 3
+      }
+    ]
+  },
+  {
+    "name": "Wiley Algorithms Simplified",
+    "slug": "wiley-algorithms-simplified-75",
+    "brand": "wiley",
+    "category": "books",
+    "price": 199,
+    "discount": 25,
+    "stock": 45,
+    "rating": 4.9,
+    "isAvailable": true,
+    "tags": [
+      "books",
+      "wiley",
+      "popular",
+      "budget"
+    ],
+    "reviews": [
+      {
+        "user": "User75",
+        "comment": "Good product for the price",
+        "rating": 5
+      },
+      {
+        "user": "Customer75",
+        "comment": "Quality is decent and delivery was smooth",
+        "rating": 4
+      }
+    ]
+  },
+  {
+    "name": "Dell Fitness Band",
+    "slug": "dell-fitness-band-76",
+    "brand": "dell",
+    "category": "electronics",
+    "price": 47799,
+    "discount": 28,
+    "stock": 52,
+    "rating": 4.4,
+    "isAvailable": true,
+    "tags": [
+      "electronics",
+      "dell",
+      "new-arrival",
+      "premium"
+    ],
+    "reviews": []
+  },
+  {
+    "name": "Roadster Kurta Set",
+    "slug": "roadster-kurta-set-77",
+    "brand": "roadster",
+    "category": "fashion",
+    "price": 6449,
+    "discount": 31,
+    "stock": 59,
+    "rating": 3.9,
+    "isAvailable": true,
+    "tags": [
+      "fashion",
+      "roadster",
+      "new-arrival",
+      "premium"
+    ],
+    "reviews": [
+      {
+        "user": "User77",
+        "comment": "Good product for the price",
+        "rating": 4
+      },
+      {
+        "user": "Customer77",
+        "comment": "Quality is decent and delivery was smooth",
+        "rating": 3
+      }
+    ]
+  },
+  {
+    "name": "Dabur Chyawanprash",
+    "slug": "dabur-chyawanprash-78",
+    "brand": "dabur",
+    "category": "grocery",
+    "price": 1109,
+    "discount": 34,
+    "stock": 66,
+    "rating": 3.4,
+    "isAvailable": true,
+    "tags": [
+      "grocery",
+      "dabur",
+      "popular",
+      "budget"
+    ],
+    "reviews": [
+      {
+        "user": "User78",
+        "comment": "Good product for the price",
+        "rating": 3
+      },
+      {
+        "user": "Customer78",
+        "comment": "Quality is decent and delivery was smooth",
+        "rating": 3
+      }
+    ]
+  },
+  {
+    "name": "Royaloak Computer Desk",
+    "slug": "royaloak-computer-desk-79",
+    "brand": "royaloak",
+    "category": "furniture",
+    "price": 36799,
+    "discount": 37,
+    "stock": 73,
+    "rating": 2.9,
+    "isAvailable": true,
+    "tags": [
+      "furniture",
+      "royaloak",
+      "new-arrival",
+      "premium"
+    ],
+    "reviews": [
+      {
+        "user": "User79",
+        "comment": "Good product for the price",
+        "rating": 3
+      },
+      {
+        "user": "Customer79",
+        "comment": "Quality is decent and delivery was smooth",
+        "rating": 2
+      }
+    ]
+  },
+  {
+    "name": "Mcgraw Hill Design Patterns",
+    "slug": "mcgraw-hill-design-patterns-80",
+    "brand": "mcgraw hill",
+    "category": "books",
+    "price": 799,
+    "discount": 40,
+    "stock": 0,
+    "rating": 4.6,
+    "isAvailable": false,
+    "tags": [
+      "books",
+      "mcgraw-hill",
+      "new-arrival",
+      "budget"
+    ],
+    "reviews": []
+  },
+  {
+    "name": "Apple Router Dual Band",
+    "slug": "apple-router-dual-band-81",
+    "brand": "apple",
+    "category": "electronics",
+    "price": 56799,
+    "discount": 43,
+    "stock": 7,
+    "rating": 4.1,
+    "isAvailable": true,
+    "tags": [
+      "electronics",
+      "apple",
+      "popular",
+      "premium"
+    ],
+    "reviews": [
+      {
+        "user": "User81",
+        "comment": "Good product for the price",
+        "rating": 4
+      },
+      {
+        "user": "Customer81",
+        "comment": "Quality is decent and delivery was smooth",
+        "rating": 4
+      }
+    ]
+  },
+  {
+    "name": "Adidas Cargo Pants",
+    "slug": "adidas-cargo-pants-82",
+    "brand": "adidas",
+    "category": "fashion",
+    "price": 1199,
+    "discount": 46,
+    "stock": 14,
+    "rating": 3.6,
+    "isAvailable": true,
+    "tags": [
+      "fashion",
+      "adidas",
+      "new-arrival",
+      "budget"
+    ],
+    "reviews": [
+      {
+        "user": "User82",
+        "comment": "Good product for the price",
+        "rating": 4
+      },
+      {
+        "user": "Customer82",
+        "comment": "Quality is decent and delivery was smooth",
+        "rating": 3
+      }
+    ]
+  },
+  {
+    "name": "Amul Toor Dal",
+    "slug": "amul-toor-dal-83",
+    "brand": "amul",
+    "category": "grocery",
+    "price": 1334,
+    "discount": 49,
+    "stock": 21,
+    "rating": 3.1,
+    "isAvailable": true,
+    "tags": [
+      "grocery",
+      "amul",
+      "new-arrival",
+      "budget"
+    ],
+    "reviews": [
+      {
+        "user": "User83",
+        "comment": "Good product for the price",
+        "rating": 3
+      },
+      {
+        "user": "Customer83",
+        "comment": "Quality is decent and delivery was smooth",
+        "rating": 3
+      }
+    ]
+  },
+  {
+    "name": "Home Centre Bean Bag",
+    "slug": "home-centre-bean-bag-84",
+    "brand": "home centre",
+    "category": "furniture",
+    "price": 42799,
+    "discount": 2,
+    "stock": 28,
+    "rating": 4.8,
+    "isAvailable": true,
+    "tags": [
+      "furniture",
+      "home-centre",
+      "popular",
+      "premium"
+    ],
+    "reviews": []
+  },
+  {
+    "name": "Wiley AI for Beginners",
+    "slug": "wiley-ai-for-beginners-85",
+    "brand": "wiley",
+    "category": "books",
+    "price": 1399,
+    "discount": 5,
+    "stock": 35,
+    "rating": 4.3,
+    "isAvailable": true,
+    "tags": [
+      "books",
+      "wiley",
+      "new-arrival",
+      "budget"
+    ],
+    "reviews": [
+      {
+        "user": "User85",
+        "comment": "Good product for the price",
+        "rating": 4
+      },
+      {
+        "user": "Customer85",
+        "comment": "Quality is decent and delivery was smooth",
+        "rating": 4
+      }
+    ]
+  },
+  {
+    "name": "Dell Webcam HD",
+    "slug": "dell-webcam-hd-86",
+    "brand": "dell",
+    "category": "electronics",
+    "price": 65799,
+    "discount": 8,
+    "stock": 42,
+    "rating": 3.8,
+    "isAvailable": true,
+    "tags": [
+      "electronics",
+      "dell",
+      "new-arrival",
+      "premium"
+    ],
+    "reviews": [
+      {
+        "user": "User86",
+        "comment": "Good product for the price",
+        "rating": 4
+      },
+      {
+        "user": "Customer86",
+        "comment": "Quality is decent and delivery was smooth",
+        "rating": 3
+      }
+    ]
+  },
+  {
+    "name": "Roadster Sweatshirt",
+    "slug": "roadster-sweatshirt-87",
+    "brand": "roadster",
+    "category": "fashion",
+    "price": 2949,
+    "discount": 11,
+    "stock": 49,
+    "rating": 3.3,
+    "isAvailable": true,
+    "tags": [
+      "fashion",
+      "roadster",
+      "popular",
+      "premium"
+    ],
+    "reviews": [
+      {
+        "user": "User87",
+        "comment": "Good product for the price",
+        "rating": 3
+      },
+      {
+        "user": "Customer87",
+        "comment": "Quality is decent and delivery was smooth",
+        "rating": 3
+      }
+    ]
+  },
+  {
+    "name": "Dabur Sugar Pack",
+    "slug": "dabur-sugar-pack-88",
+    "brand": "dabur",
+    "category": "grocery",
+    "price": 1559,
+    "discount": 14,
+    "stock": 56,
+    "rating": 2.8,
+    "isAvailable": true,
+    "tags": [
+      "grocery",
+      "dabur",
+      "new-arrival",
+      "budget"
+    ],
+    "reviews": []
+  },
+  {
+    "name": "Royaloak Kitchen Cabinet",
+    "slug": "royaloak-kitchen-cabinet-89",
+    "brand": "royaloak",
+    "category": "furniture",
+    "price": 48799,
+    "discount": 17,
+    "stock": 63,
+    "rating": 4.5,
+    "isAvailable": true,
+    "tags": [
+      "furniture",
+      "royaloak",
+      "new-arrival",
+      "premium"
+    ],
+    "reviews": [
+      {
+        "user": "User89",
+        "comment": "Good product for the price",
+        "rating": 4
+      },
+      {
+        "user": "Customer89",
+        "comment": "Quality is decent and delivery was smooth",
+        "rating": 4
+      }
+    ]
+  },
+  {
+    "name": "Mcgraw Hill Math for CS",
+    "slug": "mcgraw-hill-math-for-cs-90",
+    "brand": "mcgraw hill",
+    "category": "books",
+    "price": 1999,
+    "discount": 20,
+    "stock": 70,
+    "rating": 4.0,
+    "isAvailable": true,
+    "tags": [
+      "books",
+      "mcgraw-hill",
+      "popular",
+      "budget"
+    ],
+    "reviews": [
+      {
+        "user": "User90",
+        "comment": "Good product for the price",
+        "rating": 4
+      },
+      {
+        "user": "Customer90",
+        "comment": "Quality is decent and delivery was smooth",
+        "rating": 4
+      }
+    ]
+  },
+  {
+    "name": "Apple Laptop Stand",
+    "slug": "apple-laptop-stand-91",
+    "brand": "apple",
+    "category": "electronics",
+    "price": 74799,
+    "discount": 23,
+    "stock": 77,
+    "rating": 3.5,
+    "isAvailable": true,
+    "tags": [
+      "electronics",
+      "apple",
+      "new-arrival",
+      "premium"
+    ],
+    "reviews": [
+      {
+        "user": "User91",
+        "comment": "Good product for the price",
+        "rating": 4
+      },
+      {
+        "user": "Customer91",
+        "comment": "Quality is decent and delivery was smooth",
+        "rating": 3
+      }
+    ]
+  },
+  {
+    "name": "Adidas Cap",
+    "slug": "adidas-cap-92",
+    "brand": "adidas",
+    "category": "fashion",
+    "price": 4699,
+    "discount": 26,
+    "stock": 4,
+    "rating": 3.0,
+    "isAvailable": true,
+    "tags": [
+      "fashion",
+      "adidas",
+      "new-arrival",
+      "premium"
+    ],
+    "reviews": []
+  },
+  {
+    "name": "Amul Dishwash Liquid",
+    "slug": "amul-dishwash-liquid-93",
+    "brand": "amul",
+    "category": "grocery",
+    "price": 1784,
+    "discount": 29,
+    "stock": 11,
+    "rating": 4.7,
+    "isAvailable": true,
+    "tags": [
+      "grocery",
+      "amul",
+      "popular",
+      "budget"
+    ],
+    "reviews": [
+      {
+        "user": "User93",
+        "comment": "Good product for the price",
+        "rating": 5
+      },
+      {
+        "user": "Customer93",
+        "comment": "Quality is decent and delivery was smooth",
+        "rating": 4
+      }
+    ]
+  },
+  {
+    "name": "Home Centre Storage Box",
+    "slug": "home-centre-storage-box-94",
+    "brand": "home centre",
+    "category": "furniture",
+    "price": 54799,
+    "discount": 32,
+    "stock": 18,
+    "rating": 4.2,
+    "isAvailable": true,
+    "tags": [
+      "furniture",
+      "home-centre",
+      "new-arrival",
+      "premium"
+    ],
+    "reviews": [
+      {
+        "user": "User94",
+        "comment": "Good product for the price",
+        "rating": 4
+      },
+      {
+        "user": "Customer94",
+        "comment": "Quality is decent and delivery was smooth",
+        "rating": 4
+      }
+    ]
+  },
+  {
+    "name": "Wiley Git and GitHub",
+    "slug": "wiley-git-and-github-95",
+    "brand": "wiley",
+    "category": "books",
+    "price": 2599,
+    "discount": 35,
+    "stock": 25,
+    "rating": 3.7,
+    "isAvailable": true,
+    "tags": [
+      "books",
+      "wiley",
+      "new-arrival",
+      "premium"
+    ],
+    "reviews": [
+      {
+        "user": "User95",
+        "comment": "Good product for the price",
+        "rating": 4
+      },
+      {
+        "user": "Customer95",
+        "comment": "Quality is decent and delivery was smooth",
+        "rating": 3
+      }
+    ]
+  },
+  {
+    "name": "Dell Fast Charger",
+    "slug": "dell-fast-charger-96",
+    "brand": "dell",
+    "category": "electronics",
+    "price": 83799,
+    "discount": 38,
+    "stock": 32,
+    "rating": 3.2,
+    "isAvailable": true,
+    "tags": [
+      "electronics",
+      "dell",
+      "popular",
+      "premium"
+    ],
+    "reviews": []
+  },
+  {
+    "name": "Roadster Loafers",
+    "slug": "roadster-loafers-97",
+    "brand": "roadster",
+    "category": "fashion",
+    "price": 6449,
+    "discount": 41,
+    "stock": 39,
+    "rating": 4.9,
+    "isAvailable": true,
+    "tags": [
+      "fashion",
+      "roadster",
+      "new-arrival",
+      "premium"
+    ],
+    "reviews": [
+      {
+        "user": "User97",
+        "comment": "Good product for the price",
+        "rating": 5
+      },
+      {
+        "user": "Customer97",
+        "comment": "Quality is decent and delivery was smooth",
+        "rating": 4
+      }
+    ]
+  },
+  {
+    "name": "Dabur Potato Chips",
+    "slug": "dabur-potato-chips-98",
+    "brand": "dabur",
+    "category": "grocery",
+    "price": 2009,
+    "discount": 44,
+    "stock": 46,
+    "rating": 4.4,
+    "isAvailable": true,
+    "tags": [
+      "grocery",
+      "dabur",
+      "new-arrival",
+      "premium"
+    ],
+    "reviews": [
+      {
+        "user": "User98",
+        "comment": "Good product for the price",
+        "rating": 4
+      },
+      {
+        "user": "Customer98",
+        "comment": "Quality is decent and delivery was smooth",
+        "rating": 4
+      }
+    ]
+  },
+  {
+    "name": "Royaloak Dressing Table",
+    "slug": "royaloak-dressing-table-99",
+    "brand": "royaloak",
+    "category": "furniture",
+    "price": 60799,
+    "discount": 47,
+    "stock": 53,
+    "rating": 3.9,
+    "isAvailable": true,
+    "tags": [
+      "furniture",
+      "royaloak",
+      "popular",
+      "premium"
+    ],
+    "reviews": [
+      {
+        "user": "User99",
+        "comment": "Good product for the price",
+        "rating": 4
+      },
+      {
+        "user": "Customer99",
+        "comment": "Quality is decent and delivery was smooth",
+        "rating": 3
+      }
+    ]
+  },
+  {
+    "name": "Mcgraw Hill Interview Preparation",
+    "slug": "mcgraw-hill-interview-preparation-100",
+    "brand": "mcgraw hill",
+    "category": "books",
+    "price": 199,
+    "discount": 0,
+    "stock": 60,
+    "rating": 3.4,
+    "isAvailable": true,
+    "tags": [
+      "books",
+      "mcgraw-hill",
+      "new-arrival",
+      "budget"
+    ],
+    "reviews": []
+  }
+]

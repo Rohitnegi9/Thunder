@@ -7,3 +7,5 @@ Lecture07: https://app.notion.com/p/Lecture-07-MongoDB-internal-Architecture-39c
 Lecture08: https://app.notion.com/p/Lecture08-Create-Your-own-Database-39d43ac5cab98036b6e8c65bf50a731f?source=copy_link
 
 Lecture09: https://app.notion.com/p/Lecture09-MongoDB-and-Mongoose-39f43ac5cab9801da031d61c7de89719?source=copy_link
+
+Lecture10: https://app.notion.com/p/Lecture-10-39f43ac5cab9808e8721ff357d027c9a?source=copy_link
