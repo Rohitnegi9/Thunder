@@ -9,3 +9,5 @@ Lecture08: https://app.notion.com/p/Lecture08-Create-Your-own-Database-39d43ac5c
 Lecture09: https://app.notion.com/p/Lecture09-MongoDB-and-Mongoose-39f43ac5cab9801da031d61c7de89719?source=copy_link
 
 Lecture10: https://app.notion.com/p/Lecture-10-39f43ac5cab9808e8721ff357d027c9a?source=copy_link
+
+Lecture11: https://app.notion.com/p/Lecture-11-Cryptography-and-Security-Concepts-3a3a9af81c98805ab24dfeb8690ee385?source=copy_link
