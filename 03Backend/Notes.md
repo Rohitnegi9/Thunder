@@ -11,3 +11,5 @@ Lecture09: https://app.notion.com/p/Lecture09-MongoDB-and-Mongoose-39f43ac5cab98
 Lecture10: https://app.notion.com/p/Lecture-10-39f43ac5cab9808e8721ff357d027c9a?source=copy_link
 
 Lecture11: https://app.notion.com/p/Lecture-11-Cryptography-and-Security-Concepts-3a3a9af81c98805ab24dfeb8690ee385?source=copy_link
+
+Lecture12: https://app.notion.com/p/Lecture12-TLS-and-Authentication-3a6a9af81c9880faa24cc643b20c3b8f?source=copy_link
