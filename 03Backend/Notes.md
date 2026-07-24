@@ -13,3 +13,5 @@ Lecture10: https://app.notion.com/p/Lecture-10-39f43ac5cab9808e8721ff357d027c9a?
 Lecture11: https://app.notion.com/p/Lecture-11-Cryptography-and-Security-Concepts-3a3a9af81c98805ab24dfeb8690ee385?source=copy_link
 
 Lecture12: https://app.notion.com/p/Lecture12-TLS-and-Authentication-3a6a9af81c9880faa24cc643b20c3b8f?source=copy_link
+
+Lecture13: https://app.notion.com/p/Lecture13-Authentication-and-bcrypt-3a7a9af81c98800bb73edd11a52c8e70?source=copy_link
