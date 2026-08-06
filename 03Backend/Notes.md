@@ -20,3 +20,8 @@ Lecture13: https://app.notion.com/p/Lecture13-Authentication-and-bcrypt-3a7a9af8
 Lecture15: https://app.notion.com/p/Lecture-15-Project-Building-3aaa9af81c988068bc1df83f04e67070?source=copy_link
 
 Lecture16: https://app.notion.com/p/Lecture16-Chatgpt-Project-continue-3aba9af81c98806a9b82db0c37b949d5?source=copy_link
+
+Lecture 17,18,19: https://app.notion.com/p/Lecture-17-Zod-and-validator-3ada9af81c98800b9182fb5da79d4d86?source=copy_link
+
+
+Lecture 20: https://app.notion.com/p/Lecture20-Integrating-AI-3b1a9af81c98803e8c40f513f2f8aa99?source=copy_link
