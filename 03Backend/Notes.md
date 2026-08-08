@@ -25,3 +25,5 @@ Lecture 17,18,19: https://app.notion.com/p/Lecture-17-Zod-and-validator-3ada9af8
 
 
 Lecture 20: https://app.notion.com/p/Lecture20-Integrating-AI-3b1a9af81c98803e8c40f513f2f8aa99?source=copy_link
+
+Lecture21: https://app.notion.com/p/Lecture-21-Code-3b5a9af81c9880ea9b2aefc7d852ed21?source=copy_link
