@@ -29,3 +29,5 @@ Lecture 20: https://app.notion.com/p/Lecture20-Integrating-AI-3b1a9af81c98803e8c
 Lecture21: https://app.notion.com/p/Lecture-21-Code-3b5a9af81c9880ea9b2aefc7d852ed21?source=copy_link
 
 https://app.notion.com/p/Lecture23-Scaling-the-system-3b9a9af81c98804bb2bdd03f3fa242e8?source=copy_link
+
+Lecture26: https://app.notion.com/p/Lecture-26-Consistent-Hashing-3bfa9af81c98804dbf12c4f5979441a8?source=copy_link
