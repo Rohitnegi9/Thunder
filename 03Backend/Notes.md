@@ -33,3 +33,5 @@ https://app.notion.com/p/Lecture23-Scaling-the-system-3b9a9af81c98804bb2bdd03f3f
 Lecture26: https://app.notion.com/p/Lecture-26-Consistent-Hashing-3bfa9af81c98804dbf12c4f5979441a8?source=copy_link
 
 Lecture27: https://app.notion.com/p/Lecture-27-CAP-Theorem-3c0a9af81c9880f4a2eee54f855e04e8?source=copy_link
+
+https://app.notion.com/p/Lecture-28-Hot-Partition-in-Databases-3c2a9af81c9880ddb296cc0115373976?source=copy_link
