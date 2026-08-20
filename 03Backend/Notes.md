@@ -31,3 +31,5 @@ Lecture21: https://app.notion.com/p/Lecture-21-Code-3b5a9af81c9880ea9b2aefc7d852
 https://app.notion.com/p/Lecture23-Scaling-the-system-3b9a9af81c98804bb2bdd03f3fa242e8?source=copy_link
 
 Lecture26: https://app.notion.com/p/Lecture-26-Consistent-Hashing-3bfa9af81c98804dbf12c4f5979441a8?source=copy_link
+
+Lecture27: https://app.notion.com/p/Lecture-27-CAP-Theorem-3c0a9af81c9880f4a2eee54f855e04e8?source=copy_link
