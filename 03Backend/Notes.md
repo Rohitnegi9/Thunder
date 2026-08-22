@@ -35,3 +35,5 @@ Lecture26: https://app.notion.com/p/Lecture-26-Consistent-Hashing-3bfa9af81c9880
 Lecture27: https://app.notion.com/p/Lecture-27-CAP-Theorem-3c0a9af81c9880f4a2eee54f855e04e8?source=copy_link
 
 https://app.notion.com/p/Lecture-28-Hot-Partition-in-Databases-3c2a9af81c9880ddb296cc0115373976?source=copy_link
+
+https://app.notion.com/p/Lecture29-Elastic-Search-and-Bloom-filter-3c4a9af81c98800a8dc9f4abb108c884?source=copy_link
