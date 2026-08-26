@@ -39,3 +39,5 @@ https://app.notion.com/p/Lecture-28-Hot-Partition-in-Databases-3c2a9af81c9880ddb
 https://app.notion.com/p/Lecture29-Elastic-Search-and-Bloom-filter-3c4a9af81c98800a8dc9f4abb108c884?source=copy_link
 
 Lecture30: https://app.notion.com/p/Lecture-30-Redis-3c6a9af81c9880a28064cc9d6b927a89?source=copy_link
+
+https://app.notion.com/p/Lecture-31-Implement-Rate-Limiter-3c8a9af81c9880ce9183c83a60520d2c?source=copy_link
