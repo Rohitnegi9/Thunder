@@ -41,3 +41,5 @@ https://app.notion.com/p/Lecture29-Elastic-Search-and-Bloom-filter-3c4a9af81c988
 Lecture30: https://app.notion.com/p/Lecture-30-Redis-3c6a9af81c9880a28064cc9d6b927a89?source=copy_link
 
 https://app.notion.com/p/Lecture-31-Implement-Rate-Limiter-3c8a9af81c9880ce9183c83a60520d2c?source=copy_link
+
+https://app.notion.com/p/Lecture-32-Message-Queue-First-Thought-Principle-3cea9af81c9880768214f9b4f9f694d5?source=copy_link
