@@ -1,0 +1,30 @@
+{
+  "name": "jenkins-node-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/server.js",
+  "scripts": {
+    "dev": "node src/server.js",
+    "start": "node dist/server.js",
+    "lint": "eslint src tests",
+    "test": "jest",
+    "test:ci": "JEST_JUNIT_OUTPUT_DIR=reports/junit JEST_JUNIT_OUTPUT_NAME=junit.xml jest --ci --coverage --reporters=default --reporters=jest-junit",
+    "build": "rm -rf dist && esbuild src/server.js --bundle --platform=node --packages=external --outfile=dist/server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "esbuild": "^0.28.2",
+    "eslint": "^10.10.0", 
+    "globals": "^17.12.0",
+    "jest": "^30.5.1",
+    "jest-junit": "^17.0.0",
+    "supertest": "^7.2.2"
+  }
+}
