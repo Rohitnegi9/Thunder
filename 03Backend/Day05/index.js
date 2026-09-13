@@ -8,25 +8,30 @@ const Database = [];
 // Middle ware
 
 app.use(express.json());
-// authentication
-// rate limiter
 
+const authenticate = (req, res, next) => {
+    const authHeader = req.headers["authorization"];
+    if (!authHeader) {
+        return res.status(401).json({ message: "Unauthorized" });
+    }
+    next();
+};
 
 app.get("/",(req,res)=>{
     res.send("Welcome to Home Page");
 })
 
 
-app.get("/user",(req,res)=>{
+app.get("/user", authenticate, (req,res)=>{
     res.send("Mere toh maje hai");
 })
 
-app.post("/user",(req,res)=>{
+app.post("/user", authenticate, (req,res)=>{
     console.log(req.body);
     res.send("Post create kar di hai");
 })
 
-app.delete("/user",(req,res)=>{
+app.delete("/user", authenticate, (req,res)=>{
     res.send("I have deleted");
 })
 
