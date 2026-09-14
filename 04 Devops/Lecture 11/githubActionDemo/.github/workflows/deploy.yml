@@ -1,0 +1,68 @@
+name: Deploy To Ubuntu
+
+on:
+  pull_request:
+    branches:
+      - master
+    types:
+      - closed
+
+jobs:
+  deploy:
+    if: github.event.pull_request.merged == true
+
+    runs-on: self-hosted
+
+    steps:
+      - name: Checkout Master
+        uses: actions/checkout@v7
+        with:
+          ref: master
+
+      - name: Setup Java 21
+        uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: '21'
+          cache: maven
+
+      - name: Check Java Version
+        run: |
+          java -version
+          javac -version
+
+      - name: Build Application
+        run: |
+          chmod +x mvnw
+          ./mvnw clean package -DskipTests
+
+      - name: Stop Old Application
+        run: |
+          if [ -f /home/ubuntu/spring-demo/app.pid ]; then
+            PID=$(cat /home/ubuntu/spring-demo/app.pid)
+
+            if kill -0 "$PID" 2>/dev/null; then
+              kill "$PID"
+              sleep 2
+            fi
+
+            rm -f /home/ubuntu/spring-demo/app.pid
+          fi
+
+      - name: Copy New Application
+        run: |
+          mkdir -p /home/ubuntu/spring-demo
+          cp target/app.jar /home/ubuntu/spring-demo/app.jar
+
+      - name: Start Application
+        run: |
+          cd /home/ubuntu/spring-demo
+
+          RUNNER_TRACKING_ID="" nohup java -jar app.jar > app.log 2>&1 &
+
+          echo $! > app.pid
+
+      - name: Verify Deployment
+        run: |
+          sleep 5
+          curl --fail http://localhost:8080/hello
