@@ -1,0 +1,20 @@
+{
+  "name": "day03.1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0"
+  },
+  "devDependencies": {
+    "vite": "^8.3.0"
+  }
+}
