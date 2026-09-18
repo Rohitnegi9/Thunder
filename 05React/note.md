@@ -7,3 +7,5 @@ https://app.notion.com/p/Lecture03-useState-Hook-3dba9af81c98805cade1e521dbe022d
 https://app.notion.com/p/Lecture04-UseEffect-Hook-3dca9af81c988095b3b3c0ed3b069586?source=copy_link
 
 https://app.notion.com/p/Lecture05-React-memo-useMemo-and-useCallback-hook-3dea9af81c9880078320e38ee28341da?source=copy_link
+
+https://app.notion.com/p/Lecture06-useRef-Hook-3dfa9af81c98803392d6f03fe11922fc?source=copy_link
