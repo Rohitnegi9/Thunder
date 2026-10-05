@@ -21,3 +21,5 @@ https://app.notion.com/p/Lecture-10-React-Router-effa9af81c9883b4a53281942e28360
 https://app.notion.com/p/Lecture-11-React-Router-725a9af81c9883a9b4098109981d5836?source=copy_link
 
 https://app.notion.com/p/Lecture12-Zustand-from-First-Principles-b2ba9af81c9882209ee38125f21e68b0?source=copy_link
+
+https://app.notion.com/p/Lecture13-Tailwind-CSS-3f03a78e0e2281a0a9bae6ec9e054ded?source=copy_link
