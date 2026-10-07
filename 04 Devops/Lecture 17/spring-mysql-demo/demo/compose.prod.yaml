@@ -1,0 +1,58 @@
+services:
+
+  db:
+    image: mysql:8.4.7
+
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpass
+      MYSQL_DATABASE: appdb
+      MYSQL_USER: appuser
+      MYSQL_PASSWORD: apppass
+
+    ports:
+      - "3306:3306"
+
+    volumes:
+      - mysql-data:/var/lib/mysql
+
+    networks:
+      - spring-net
+
+    healthcheck:
+      test:
+        [
+          "CMD-SHELL",
+          "mysqladmin ping -h localhost -uroot -p$$MYSQL_ROOT_PASSWORD --silent"
+        ]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+
+  app:
+    image: adityatandon02/spring-mysql-demo:1.0.0
+
+    environment:
+      DB_URL: "jdbc:mysql://db:3306/appdb?useSSL=false&allowPublicKeyRetrieval=true"
+      DB_USERNAME: appuser
+      DB_PASSWORD: apppass
+
+    ports:
+      - "8080:8080"
+
+    depends_on:
+      db:
+        condition: service_healthy
+
+    networks:
+      - spring-net
+
+    restart: unless-stopped
+
+volumes:
+  mysql-data:
+
+
+networks:
+  spring-net:
+    driver: bridge
