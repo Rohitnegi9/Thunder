@@ -6,12 +6,18 @@ import userRouter from "./routes/userRouter.js";
 import messageRouter from "./routes/messageRouter.js";
 import cookieParser from "cookie-parser";
 import chatRouter from "./routes/chatRouter.js";
-
-
+import cors from "cors";
 
 
 
 const app = express();
+
+app.use(
+  cors({
+    origin: "http://localhost:5173",
+    credentials: true,
+  })
+);
 
 
 app.use(express.json());
@@ -32,7 +38,7 @@ const startServer = async ()=>{
         await connectRedis();
 
        app.listen(process.env.PORT,()=>{
-        console.log(`Server has started listenting at port 3000 ${process.env.PORT}`);
+        console.log(`Server has started listenting at port ${process.env.PORT}`);
        })
     }
     catch(err){
