@@ -10,8 +10,6 @@ import cors from "cors";
 
 
 
-
-
 const app = express();
 
 app.use(
@@ -40,7 +38,7 @@ const startServer = async ()=>{
         await connectRedis();
 
        app.listen(process.env.PORT,()=>{
-        console.log(`Server has started listenting at port 3000 ${process.env.PORT}`);
+        console.log(`Server has started listenting at port ${process.env.PORT}`);
        })
     }
     catch(err){

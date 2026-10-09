@@ -25,3 +25,5 @@ https://app.notion.com/p/Lecture12-Zustand-from-First-Principles-b2ba9af81c98822
 https://app.notion.com/p/Lecture13-Tailwind-CSS-3f03a78e0e2281a0a9bae6ec9e054ded?source=copy_link
 
 https://app.notion.com/p/Lecture-14-Project-Making-3eda9af81c98805cabe7fb9df93ad9cc?source=copy_link
+
+https://app.notion.com/p/Lecture-15-React-frontend-02-3f4a9af81c9880c782eae61451493a78?source=copy_link
