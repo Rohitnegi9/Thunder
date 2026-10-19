@@ -1,0 +1,1 @@
+https://app.notion.com/p/Lecture01-Advance-Backend-afea9af81c9882f9b359019a83a0faf6?source=copy_link
