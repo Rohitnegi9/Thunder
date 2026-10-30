@@ -4,3 +4,5 @@ https://app.notion.com/p/Lecture02-Cloudinary-and-s3-3dba9af81c988278ac5901a3724
 
 
 Lecture04: https://app.notion.com/p/Lecture04-408a9af81c988084a918d95a78c99971?source=copy_link
+
+https://app.notion.com/p/Lecture05-realtime_communication_first_principles_notes-adaa9af81c9883eea7a9013cadf1ff86?source=copy_link
