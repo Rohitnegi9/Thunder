@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat app</title>
+</head>
+<body>
+    <h1>Anonymous chat app</h1>
+    <h2 id="status">offline</h2>
+
+    <div>
+        <span>UserName: </span>
+        <input id="userName" type="text" value="John">
+    </div>
+
+    <!-- create room -->
+    <div>
+        <button id="createRoom">Create Room</button>
+    </div>
+    <!-- Join room -->
+    <div>
+        <input id="roomId" type="text" placeholder="Enter Your RoomID">
+        <button id="joinRoom">Join Room</button>
+    </div>
+    <!-- send message -->
+    <div id="chat" hidden>
+        <div id="message"></div>
+
+        <input id="inputMessage" type="text" placeholder="Enter your message">
+        <button id="send">Send</button>
+    </div>
+
+    <script>
+
+        const socket =  new WebSocket("ws://localhost:3000"); 
+        
+        const status = document.getElementById("status");
+        const chat = document.getElementById("chat");
+        const userName = document.getElementById("userName");
+        const createRoom = document.getElementById("createRoom");
+        const roomId = document.getElementById("roomId");
+        const joinRoom = document.getElementById("joinRoom");
+        const message = document.getElementById("message");
+        const inputMessage = document.getElementById("inputMessage");
+        const send = document.getElementById("send");
+
+
+        
+        socket.onopen = ()=>{
+            status.textContent = "Online";
+        }
+
+        socket.onclose = ()=>{
+            status.textContent = "Offline";
+        }
+
+        createRoom.onclick = ()=>{
+            socket.send(JSON.stringify({
+                userName: userName.value,
+                type: "create_room"
+            }))
+        }
+
+        joinRoom.onclick = ()=>{
+            socket.send(JSON.stringify({
+                userName: userName.value,
+                type: "join_room",
+                roomId: roomId.value
+            }))
+        };
+
+       
+        send.onclick = ()=>{
+            socket.send(JSON.stringify({
+                userName: userName.value,
+                type: "chat",
+                roomId: roomId.value,
+                text: inputMessage.value
+            }))
+
+            inputMessage.value = ""
+        };
+
+
+
+        socket.onmessage = (event)=>{
+
+            const reply = JSON.parse(event.data);
+            
+            if(reply.type == "room_created" || reply.type== "room_joined"){
+                chat.hidden = false;
+                roomId.value = reply.roomId;
+                console.log(reply);
+            }
+            else if(reply.type == "messages"){
+                const p = document.createElement('p');
+                p.textContent = `${reply.userName}: ${reply.text}`
+                message.append(p);
+            }
+            else if(reply.type == "error"){
+                alert(reply.text);
+            }
+        }
+
+
+
+    </script>
+</body>
+</html>
