@@ -10,3 +10,5 @@ https://app.notion.com/p/Lecture05-realtime_communication_first_principles_notes
 https://app.notion.com/p/Lecture06-Websocket-Implementation-40ca9af81c9880fe9a97ce73cbdb4f1b?source=copy_link
 
 https://app.notion.com/p/Lecture07-websocket-Project-40da9af81c9880b5ad0cca426f127cb1?source=copy_link
+
+https://app.notion.com/p/Lecture08-Socket-io-40f3a78e0e2281d68fafe19147a3e4b4

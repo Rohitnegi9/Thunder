@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Group Chat</title>
+</head>
+<body>
+
+    <h1>Anonymous Group Chat</h1>
+
+    <input id="username" placeholder="Enter username">
+
+    <br><br>
+
+    <button id="createRoom">Create Room</button>
+
+    <br><br>
+
+    <input id="roomId" placeholder="Enter Room ID">
+    <button id="joinRoom">Join Room</button>
+
+    <h3 id="status"></h3>
+
+    <div id="chat" hidden>
+        <h2>Messages</h2>
+        <div id="messages"></div>
+
+        <input id="messageInput" placeholder="Enter message">
+        <button id="send">Send</button>
+    </div>
+
+    <script src="http://localhost:3000/socket.io/socket.io.js"></script>
+
+    <script>
+        const socket = io("http://localhost:3000");
+
+        const username = document.getElementById("username");
+        const roomId = document.getElementById("roomId");
+        const chat = document.getElementById("chat");
+        const messages = document.getElementById("messages");
+        const messageInput = document.getElementById("messageInput");
+
+        // Create a new room
+        document.getElementById("createRoom").onclick = () => {
+            roomId.value = Math.random().toString(36).slice(2, 8).toUpperCase();
+
+            joinRoom();
+        };
+
+        // Join existing room
+        document.getElementById("joinRoom").onclick = joinRoom;
+
+        function joinRoom() {
+            socket.emit("joinRoom", {
+                roomId: roomId.value.trim(),
+                username: username.value.trim()
+            });
+        }
+
+        // Room joined successfully
+        socket.on("joinedRoom", (id) => {
+            document.getElementById("status").textContent = "Room: " + id;
+            messages.innerHTML = "";
+            chat.hidden = false;
+        });
+
+        // Send message
+        document.getElementById("send").onclick = () => {
+            socket.emit("sendMessage", messageInput.value);
+            messageInput.value = "";
+        };
+
+        // Receive message
+        socket.on("newMessage", (data) => {
+            const p = document.createElement("p");
+            p.textContent = data.username + ": " + data.text;
+            messages.appendChild(p);
+        });
+    </script>
+
+</body>
+</html>
