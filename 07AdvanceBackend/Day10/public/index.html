@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>1-to-1 Video Call</title>
+  <style>
+    body {
+      font-family: system-ui, sans-serif;
+      background: #111;
+      color: #eee;
+      text-align: center;
+      margin: 0;
+      padding: 20px;
+    }
+    .card {
+      display: inline-block;
+      background: #1c1c1c;
+      padding: 16px 20px;
+      border-radius: 10px;
+      margin: 6px;
+      vertical-align: top;
+    }
+    input, button {
+      font-size: 16px;
+      padding: 8px 12px;
+      border-radius: 6px;
+      border: none;
+      margin: 4px;
+    }
+    button { cursor: pointer; background: #2563eb; color: white; }
+    #hangupBtn { background: #dc2626; }
+    #copyBtn { background: #444; }
+    #roomIdText { font-family: monospace; font-size: 22px; color: #4ade80; }
+    #serverStatus { font-size: 14px; }
+    #status { margin: 12px 0 16px; color: #aaa; }
+    .videos {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .box { position: relative; }
+    video {
+      width: 480px;
+      max-width: 90vw;
+      background: #000;
+      border-radius: 10px;
+    }
+    .label {
+      position: absolute;
+      top: 8px;
+      left: 12px;
+      background: rgba(0, 0, 0, 0.6);
+      padding: 2px 8px;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+  <h1>1-to-1 Video Call</h1>
+  <div id="serverStatus">Server: connecting...</div>
+
+  <!-- Shown BEFORE a call: create or join -->
+  <div id="lobby">
+    <div class="card">
+      <h3>Start a new call</h3>
+      <button id="createBtn">Create room</button>
+    </div>
+    <div class="card">
+      <h3>Join a friend's call</h3>
+      <input id="roomInput" placeholder="Enter room ID" />
+      <button id="joinBtn">Join room</button>
+    </div>
+    <br />
+    <label>
+      <input type="checkbox" id="relayOnly" />
+      Relay only (force TURN, for testing)
+    </label>
+  </div>
+
+  <!-- Shown DURING a call -->
+  <div id="inCall" hidden>
+    <div class="card">
+      Room ID: <span id="roomIdText"></span>
+      <button id="copyBtn">Copy invite link</button>
+      <button id="hangupBtn">Hang up</button>
+    </div>
+  </div>
+
+  <div id="status">Create a room, or enter a room ID to join</div>
+
+  <div class="videos">
+    <div class="box">
+      <span class="label">You</span>
+      <!-- muted: so you don't hear your own voice back -->
+      <video id="localVideo" autoplay playsinline muted></video>
+    </div>
+    <div class="box">
+      <span class="label">Friend</span>
+      <video id="remoteVideo" autoplay playsinline></video>
+    </div>
+  </div>
+
+  <!-- Socket.IO serves its own client library at this path automatically -->
+  <script src="/socket.io/socket.io.js"></script>
+  <script>
+    // ─────────────────────────────────────────────
+    // Page elements
+    // ─────────────────────────────────────────────
+    const serverStatus = document.getElementById("serverStatus");
+    const lobby = document.getElementById("lobby");
+    const inCall = document.getElementById("inCall");
+    const createBtn = document.getElementById("createBtn");
+    const joinBtn = document.getElementById("joinBtn");
+    const roomInput = document.getElementById("roomInput");
+    const relayOnly = document.getElementById("relayOnly");
+    const roomIdText = document.getElementById("roomIdText");
+    const copyBtn = document.getElementById("copyBtn");
+    const hangupBtn = document.getElementById("hangupBtn");
+    const statusText = document.getElementById("status");
+    const localVideo = document.getElementById("localVideo");
+    const remoteVideo = document.getElementById("remoteVideo");
+
+    // ─────────────────────────────────────────────
+    // State
+    // ─────────────────────────────────────────────
+    let localStream = null;      // my camera + mic
+    let pc = null;               // RTCPeerConnection (the call itself)
+    let currentRoomId = null;
+    let pendingCandidates = [];  // ICE candidates that arrived too early
+
+    function setStatus(text) {
+      statusText.textContent = text;
+      console.log("[status]", text);
+    }
+
+    // If someone opened an invite link like  http://.../?room=a3f9c2  → fill the room ID
+    const roomFromLink = new URLSearchParams(location.search).get("room");
+    if (roomFromLink) {
+      roomInput.value = roomFromLink;
+      setStatus(`Invite link opened. Click "Join room" to join ${roomFromLink}`);
+    }
+
+    // ─────────────────────────────────────────────
+    // Step 0: Connect to the signaling server (Socket.IO)
+    // ─────────────────────────────────────────────
+    const socket = io();
+
+    socket.on("connect", () => {
+      serverStatus.textContent = "Server: connected ✅";
+    });
+
+    socket.on("disconnect", () => {
+      serverStatus.textContent = "Server: disconnected ❌ (is npm run dev running?)";
+    });
+
+    // ─────────────────────────────────────────────
+    // Step 1: Create the RTCPeerConnection
+    // ─────────────────────────────────────────────
+    async function createPeerConnection() {
+      // Ask OUR backend for STUN + TURN servers
+      const response = await fetch("/api/ice-servers");
+      const iceServers = await response.json();
+
+      pc = new RTCPeerConnection({
+        iceServers,
+        // "relay" = only use TURN (to test TURN), "all" = host, STUN and TURN
+        iceTransportPolicy: relayOnly.checked ? "relay" : "all",
+      });
+      pendingCandidates = [];
+
+      // Send my camera + mic tracks over this connection
+      localStream.getTracks().forEach((track) => pc.addTrack(track, localStream));
+
+      // Each address the browser finds (host / srflx / relay) → send to friend (trickle ICE)
+      pc.onicecandidate = (event) => {
+        if (event.candidate) socket.emit("ice-candidate", event.candidate);
+      };
+
+      // Friend's audio/video arrived → show it
+      pc.ontrack = (event) => {
+        remoteVideo.srcObject = event.streams[0];
+      };
+
+      // new → connecting → connected (ICE + DTLS done) / disconnected / failed
+      pc.onconnectionstatechange = () => {
+        setStatus(`Connection: ${pc.connectionState}`);
+        if (pc.connectionState === "connected") showConnectionPath();
+      };
+    }
+
+    // ─────────────────────────────────────────────
+    // Step 2: Create or join a room
+    // ─────────────────────────────────────────────
+
+    // "Create room" → backend makes a new room ID → I join it and wait
+    createBtn.onclick = async () => {
+      const response = await fetch("/api/rooms", { method: "POST" });
+      const { roomId } = await response.json();
+      await enterRoom(roomId);
+    };
+
+    // "Join room" → join the room ID my friend sent me
+    joinBtn.onclick = async () => {
+      const roomId = roomInput.value.trim();
+      if (!roomId) return setStatus("Please enter a room ID");
+      await enterRoom(roomId);
+    };
+
+    async function enterRoom(roomId) {
+      try {
+        // Camera + mic on (browser asks permission)
+        localStream = await navigator.mediaDevices.getUserMedia({ video: true, audio: true });
+        localVideo.srcObject = localStream;
+
+        // Create the connection BEFORE joining, so it's ready for incoming messages
+        await createPeerConnection();
+      } catch (error) {
+        setStatus(`Error: ${error.message}`);
+        console.error(error);
+        resetCall();
+        return;
+      }
+
+      // Ask the server to put me in the room; it replies with ok or error
+      socket.emit("join-room", roomId, (reply) => {
+        if (reply.error) {
+          setStatus(reply.error);
+          resetCall();
+          return;
+        }
+
+        currentRoomId = roomId;
+        roomIdText.textContent = roomId;
+        lobby.hidden = true;
+        inCall.hidden = false;
+        setStatus("In the room. Share the room ID or invite link, and wait for your friend...");
+      });
+    }
+
+    copyBtn.onclick = async () => {
+      const link = `${location.origin}/?room=${currentRoomId}`;
+      await navigator.clipboard.writeText(link);
+      setStatus(`Invite link copied: ${link}`);
+    };
+
+    // ─────────────────────────────────────────────
+    // Step 3: Signaling messages from the server
+    // ─────────────────────────────────────────────
+
+    // I was in the room first, my friend just joined → I am the CALLER
+    socket.on("ready", async () => {
+      setStatus("Friend joined. Calling...");
+      const offer = await pc.createOffer();  // SDP: codecs, ICE ufrag/pwd, fingerprint
+      await pc.setLocalDescription(offer);    // lock it in + start ICE gathering
+      socket.emit("offer", pc.localDescription);
+    });
+
+    // I am the RECEIVER: the caller sent an offer
+    socket.on("offer", async (offer) => {
+      setStatus("Incoming call...");
+      await pc.setRemoteDescription(offer);   // caller's codecs, ICE credentials, fingerprint
+      await addPendingCandidates();
+      const answer = await pc.createAnswer(); // common codecs + MY ICE credentials + fingerprint
+      await pc.setLocalDescription(answer);
+      socket.emit("answer", pc.localDescription);
+    });
+
+    // I am the CALLER: the receiver answered
+    socket.on("answer", async (answer) => {
+      await pc.setRemoteDescription(answer);
+      await addPendingCandidates();
+    });
+
+    // A candidate from my friend. If the offer/answer isn't set yet, keep it for later.
+    socket.on("ice-candidate", async (candidate) => {
+      if (pc && pc.remoteDescription) {
+        await pc.addIceCandidate(candidate);
+      } else {
+        pendingCandidates.push(candidate);
+      }
+    });
+
+    async function addPendingCandidates() {
+      for (const candidate of pendingCandidates) {
+        await pc.addIceCandidate(candidate);
+      }
+      pendingCandidates = [];
+    }
+
+    // Friend hung up or closed the tab → stay in the room, ready for the next person
+    socket.on("peer-left", async () => {
+      setStatus("Friend left. Waiting for someone to join...");
+      remoteVideo.srcObject = null;
+      pc.close();
+      await createPeerConnection();
+    });
+
+    // ─────────────────────────────────────────────
+    // Step 4: Hang up
+    // ─────────────────────────────────────────────
+    hangupBtn.onclick = () => {
+      socket.emit("leave-room");
+      resetCall();
+      setStatus("Call ended. Create a room, or enter a room ID to join");
+    };
+
+    function resetCall() {
+      if (pc) pc.close();
+      pc = null;
+
+      if (localStream) localStream.getTracks().forEach((track) => track.stop()); // camera off
+      localStream = null;
+
+      localVideo.srcObject = null;
+      remoteVideo.srcObject = null;
+      currentRoomId = null;
+      lobby.hidden = false;
+      inCall.hidden = true;
+    }
+
+    // ─────────────────────────────────────────────
+    // Learning helper: which ICE path won?
+    // host = same network, srflx = direct via hole punching, relay = through TURN
+    // ─────────────────────────────────────────────
+    async function showConnectionPath() {
+      const stats = await pc.getStats();
+      let pairId = null;
+      stats.forEach((report) => {
+        if (report.type === "transport") pairId = report.selectedCandidatePairId;
+      });
+
+      const pair = stats.get(pairId);
+      if (!pair) return;
+
+      const mine = stats.get(pair.localCandidateId).candidateType;
+      const friends = stats.get(pair.remoteCandidateId).candidateType;
+      setStatus(`Connected 🔒  Path: my ${mine} ↔ friend's ${friends}`);
+    }
+  </script>
+</body>
+</html>

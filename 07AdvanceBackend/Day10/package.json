@@ -1,0 +1,16 @@
+{
+  "name": "webrtc-call",
+  "version": "1.0.0",
+  "description": "Minimal 1-to-1 WebRTC video call with Socket.IO signaling",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node --env-file=.env server.js",
+    "dev": "node --watch --env-file=.env server.js"
+  },
+  "dependencies": {
+    "dotenv": "^18.0.10",
+    "express": "^5.1.0",
+    "socket.io": "^4.8.1"
+  }
+}

@@ -14,3 +14,5 @@ https://app.notion.com/p/Lecture07-websocket-Project-40da9af81c9880b5ad0cca426f1
 https://app.notion.com/p/Lecture08-Socket-io-40f3a78e0e2281d68fafe19147a3e4b4
 
 https://app.notion.com/p/Lecture09-WebRTC-4103a78e0e2281c5ad4dfbebfd601c39?source=copy_link
+
+https://app.notion.com/p/Lecture10-WebRTC-Deep-Dive-4163a78e0e22813a9f83cfa506a68830?source=copy_link
